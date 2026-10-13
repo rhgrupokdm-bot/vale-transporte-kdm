@@ -2296,6 +2296,11 @@
 
             if (!mes || !mes.semanas) return;
 
+            // Garantir que a estrutura exists no allData
+            if (!allData[monthKey]) {
+                allData[monthKey] = {};
+            }
+
             const summarySections = document.getElementById('summarySections');
             if (!summarySections) return;
 
@@ -2564,6 +2569,11 @@
                 return;
             }
 
+            // Garantir que a estrutura exists no allData
+            if (!allData[monthKey]) {
+                allData[monthKey] = {};
+            }
+
             // Coletar todas as faltas e calcular valores
             let todasAsFaltas = [];
             let totalVT = 0;
@@ -2797,6 +2807,12 @@
             semanaEmEdicao = semana;
             const monthKey = `${currentYear}-${currentMonth}`;
             const faltasKey = `${mat}_${semana}_faltas`;
+
+            // Garantir que a estrutura exists no allData
+            if (!allData[monthKey]) {
+                allData[monthKey] = {};
+            }
+
             faltasEmEdicao = JSON.parse(JSON.stringify(allData[monthKey][faltasKey] || []));
 
             document.getElementById('dataFalta').value = '';
