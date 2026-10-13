@@ -13,7 +13,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-            background: #f8f9fc;
+            background: linear-gradient(135deg, #fff4f8 0%, #f0e6ff 100%);
             min-height: 100vh;
             padding: 0;
             color: #2c3e50;
@@ -25,17 +25,17 @@
             align-items: center;
             min-height: 100vh;
             padding: 20px;
-            background: linear-gradient(135deg, #f8f9fc 0%, #e8f0f7 100%);
+            background: linear-gradient(135deg, #fff4f8 0%, #ffe6f0 100%);
         }
 
         .login-box {
             background: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(212, 165, 255, 0.15);
             padding: 48px;
             max-width: 420px;
             width: 100%;
-            border: none;
+            border: 2px solid #f0d9f0;
         }
 
         .login-box h1 {
@@ -70,10 +70,10 @@
         .form-group input {
             width: 100%;
             padding: 12px 16px;
-            border: 1px solid #d4dce8;
-            border-radius: 10px;
+            border: 1.5px solid #e5c8e5;
+            border-radius: 12px;
             font-size: 15px;
-            background: #fbfcfd;
+            background: #fff9fd;
             color: #2c3e50;
             transition: all 0.2s ease;
             font-family: inherit;
@@ -81,31 +81,31 @@
 
         .form-group input:focus {
             outline: none;
-            border-color: #5b7cfa;
-            box-shadow: 0 0 0 3px rgba(91, 124, 250, 0.15);
-            background: white;
+            border-color: #b3deff;
+            box-shadow: 0 0 0 3px rgba(179, 222, 255, 0.2);
+            background: #f8f5ff;
         }
 
         .btn-login {
             width: 100%;
             padding: 14px;
-            background: linear-gradient(135deg, #5b7cfa 0%, #748ffc 100%);
+            background: linear-gradient(135deg, #b3deff 0%, #d4a5ff 100%);
             color: white;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
             margin-top: 10px;
-            box-shadow: 0 4px 15px rgba(91, 124, 250, 0.3);
+            box-shadow: 0 4px 15px rgba(179, 222, 255, 0.3);
             transition: all 0.3s ease;
             letter-spacing: 0.3px;
         }
 
         .btn-login:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(91, 124, 250, 0.5);
-            background: linear-gradient(135deg, #4c6ef5 0%, #6b7dfc 100%);
+            box-shadow: 0 8px 25px rgba(212, 165, 255, 0.4);
+            background: linear-gradient(135deg, #90ceff 0%, #c07aff 100%);
         }
 
         .error {
@@ -119,16 +119,16 @@
         }
 
         .demo-box {
-            background: #f0f8ff;
-            border-left: 4px solid #667eea;
+            background: #f0e6ff;
+            border-left: 4px solid #d4a5ff;
             padding: 15px;
             margin-top: 20px;
-            border-radius: 5px;
+            border-radius: 10px;
             font-size: 12px;
         }
 
         .demo-box strong {
-            color: #667eea;
+            color: #b897d1;
         }
 
         /* APP */
@@ -141,7 +141,7 @@
         .navbar {
             background: #ffffff;
             padding: 20px 32px;
-            border-bottom: 1px solid #e5e9f2;
+            border-bottom: 2px solid #f0d9f0;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -150,6 +150,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 2px 8px rgba(212, 165, 255, 0.08);
         }
 
         .navbar h1 {
@@ -181,7 +182,7 @@
 
         .month-selector select {
             padding: 10px 14px;
-            border: 1px solid #d4dce8;
+            border: 1.5px solid #e5c8e5;
             border-radius: 10px;
             font-size: 14px;
             font-weight: 500;
@@ -192,8 +193,8 @@
 
         .month-selector select:focus {
             outline: none;
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+            border-color: #b3deff;
+            box-shadow: 0 0 0 3px rgba(179, 222, 255, 0.1);
         }
 
         .month-nav {
@@ -203,20 +204,20 @@
 
         .month-btn {
             background: #ffffff;
-            border: 1px solid #d4dce8;
+            border: 1.5px solid #e5c8e5;
             padding: 9px 14px;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
             font-weight: 500;
             transition: all 0.2s ease;
             font-size: 13px;
-            color: #6b7280;
+            color: #8b6b9e;
         }
 
         .month-btn:hover {
-            background: #f8f9fc;
-            border-color: #3b82f6;
-            color: #3b82f6;
+            background: #f8f5ff;
+            border-color: #b3deff;
+            color: #7fc8ff;
         }
 
         .navbar-right {
@@ -226,30 +227,30 @@
         }
 
         .user-badge {
-            background: #f0f5ff;
+            background: #f0e6ff;
             padding: 8px 16px;
             border-radius: 10px;
             font-size: 13px;
             font-weight: 600;
-            color: #3b82f6;
+            color: #b897d1;
         }
 
         .btn-logout {
             background: transparent;
-            border: 1px solid #d4dce8;
+            border: 1.5px solid #e5c8e5;
             padding: 10px 18px;
             border-radius: 10px;
             cursor: pointer;
             font-weight: 500;
             font-size: 14px;
-            color: #6b7280;
+            color: #8b6b9e;
             transition: all 0.2s ease;
         }
 
         .btn-logout:hover {
-            border-color: #3b82f6;
-            background: #f0f5ff;
-            color: #3b82f6;
+            border-color: #b3deff;
+            background: #f0e6ff;
+            color: #7fc8ff;
         }
 
         .container {
@@ -270,47 +271,48 @@
         .week-btn {
             padding: 10px 18px;
             background: #ffffff;
-            border: 1px solid #d4dce8;
+            border: 1.5px solid #e5c8e5;
             border-radius: 10px;
             cursor: pointer;
             font-weight: 500;
             transition: all 0.2s ease;
             font-size: 14px;
-            color: #6b7280;
+            color: #8b6b9e;
         }
 
         .week-btn:hover {
-            border-color: #3b82f6;
-            background: #f0f5ff;
-            color: #3b82f6;
+            border-color: #b3deff;
+            background: #f8f5ff;
+            color: #7fc8ff;
         }
 
         .week-btn.active {
-            background: #3b82f6;
+            background: linear-gradient(135deg, #b3deff 0%, #d4a5ff 100%);
             color: white;
-            border-color: #3b82f6;
-            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+            border-color: #a8d8ff;
+            box-shadow: 0 4px 12px rgba(179, 222, 255, 0.3);
         }
 
         .info-banner {
-            background: #f0f5ff;
-            border-left: 3px solid #3b82f6;
+            background: #f0e6ff;
+            border-left: 4px solid #d4a5ff;
             padding: 14px 18px;
             margin-bottom: 24px;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 14px;
-            color: #1e40af;
+            color: #8b5fa8;
             font-weight: 500;
             letter-spacing: 0.2px;
-            box-shadow: none;
+            box-shadow: 0 2px 8px rgba(212, 165, 255, 0.1);
         }
 
         .table-wrapper {
             overflow-x: auto;
             margin-bottom: 30px;
             background: #ffffff;
-            border-radius: 12px;
-            border: 1px solid #e5e9f2;
+            border-radius: 14px;
+            border: 1.5px solid #f0d9f0;
+            box-shadow: 0 2px 8px rgba(212, 165, 255, 0.08);
         }
 
         table {
@@ -320,18 +322,18 @@
         }
 
         th {
-            background: #f8f9fc;
+            background: #faf8fc;
             padding: 14px 16px;
             text-align: left;
             font-weight: 600;
             color: #2c3e50;
-            border-bottom: 1px solid #e5e9f2;
+            border-bottom: 1.5px solid #f0d9f0;
             font-size: 13px;
         }
 
         td {
             padding: 14px 16px;
-            border-bottom: 1px solid #f0f4f8;
+            border-bottom: 1px solid #f8f4fa;
         }
 
         tbody tr {
@@ -339,7 +341,7 @@
         }
 
         tbody tr:hover {
-            background: #f8fafb;
+            background: #fef8ff;
         }
 
         tbody tr td:first-child {
@@ -353,7 +355,7 @@
         td input {
             width: 100%;
             padding: 8px 12px;
-            border: 1px solid #d4dce8;
+            border: 1.5px solid #e5c8e5;
             border-radius: 8px;
             font-size: 13px;
             text-align: center;
@@ -365,15 +367,15 @@
 
         td input:focus {
             outline: none;
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-            background: #f0f5ff;
+            border-color: #b3deff;
+            box-shadow: 0 0 0 3px rgba(179, 222, 255, 0.15);
+            background: #f8f5ff;
         }
 
         td select {
             width: 100%;
             padding: 8px 12px;
-            border: 1px solid #d4dce8;
+            border: 1.5px solid #e5c8e5;
             border-radius: 8px;
             font-size: 13px;
             text-align: center;
@@ -385,8 +387,8 @@
 
         td select:focus {
             outline: none;
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+            border-color: #b3deff;
+            box-shadow: 0 0 0 3px rgba(179, 222, 255, 0.15);
         }
 
         td.total {
@@ -408,7 +410,7 @@
         }
 
         .btn-save {
-            background: #3b82f6;
+            background: linear-gradient(135deg, #b3deff 0%, #d4a5ff 100%);
             color: white;
             border: none;
             padding: 11px 28px;
@@ -416,14 +418,15 @@
             font-weight: 600;
             cursor: pointer;
             font-size: 14px;
-            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+            box-shadow: 0 4px 12px rgba(179, 222, 255, 0.25);
             transition: all 0.2s ease;
             letter-spacing: 0.3px;
         }
 
         .btn-save:hover {
-            background: #2563eb;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            background: linear-gradient(135deg, #90ceff 0%, #c07aff 100%);
+            box-shadow: 0 6px 16px rgba(212, 165, 255, 0.35);
+            transform: translateY(-1px);
         }
 
         .btn-save:active {
@@ -432,25 +435,25 @@
 
         .btn-clear {
             background: transparent;
-            border: 1px solid #d4dce8;
+            border: 1.5px solid #e5c8e5;
             padding: 11px 28px;
             border-radius: 10px;
             font-weight: 500;
             cursor: pointer;
-            color: #6b7280;
+            color: #8b6b9e;
             transition: all 0.2s ease;
             font-size: 14px;
             letter-spacing: 0.3px;
         }
 
         .btn-clear:hover {
-            background: #f8f9fc;
-            border-color: #bfc4d4;
-            color: #2c3e50;
+            background: #f8f5ff;
+            border-color: #d4a5ff;
+            color: #7fc8ff;
         }
 
         .btn-bulk {
-            background: #3b82f6;
+            background: linear-gradient(135deg, #b3deff 0%, #d4a5ff 100%);
             color: white;
             border: none;
             padding: 11px 24px;
@@ -459,12 +462,13 @@
             cursor: pointer;
             font-size: 14px;
             transition: all 0.2s ease;
-            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+            box-shadow: 0 4px 12px rgba(179, 222, 255, 0.25);
         }
 
         .btn-bulk:hover {
-            background: #2563eb;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            background: linear-gradient(135deg, #90ceff 0%, #c07aff 100%);
+            box-shadow: 0 6px 16px rgba(212, 165, 255, 0.35);
+            transform: translateY(-1px);
         }
 
         .modal {
@@ -488,11 +492,12 @@
             background-color: white;
             margin: 8% auto;
             padding: 32px;
-            border-radius: 14px;
+            border-radius: 16px;
             width: 90%;
             max-width: 600px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 10px 30px rgba(212, 165, 255, 0.15);
             animation: slideUp 0.3s ease;
+            border: 1.5px solid #f0d9f0;
         }
 
         @keyframes slideUp {
@@ -526,7 +531,7 @@
         .modal-input {
             width: 100%;
             padding: 10px 12px;
-            border: 1px solid #d4dce8;
+            border: 1.5px solid #e5c8e5;
             border-radius: 8px;
             font-size: 14px;
             box-sizing: border-box;
@@ -536,9 +541,9 @@
 
         .modal-input:focus {
             outline: none;
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-            background: #f0f5ff;
+            border-color: #b3deff;
+            box-shadow: 0 0 0 3px rgba(179, 222, 255, 0.15);
+            background: #f8f5ff;
         }
 
         .modal-footer {
@@ -558,26 +563,26 @@
         }
 
         .modal-btn-apply {
-            background: #3b82f6;
+            background: linear-gradient(135deg, #b3deff 0%, #d4a5ff 100%);
             color: white;
-            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+            box-shadow: 0 4px 12px rgba(179, 222, 255, 0.25);
         }
 
         .modal-btn-apply:hover {
-            background: #2563eb;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            background: linear-gradient(135deg, #90ceff 0%, #c07aff 100%);
+            box-shadow: 0 6px 16px rgba(212, 165, 255, 0.35);
         }
 
         .modal-btn-cancel {
             background: transparent;
-            color: #6b7280;
-            border: 1px solid #d4dce8;
+            color: #8b6b9e;
+            border: 1.5px solid #e5c8e5;
         }
 
         .modal-btn-cancel:hover {
-            background: #f8f9fc;
-            border-color: #bfc4d4;
-            color: #2c3e50;
+            background: #f8f5ff;
+            border-color: #d4a5ff;
+            color: #7fc8ff;
         }
 
         .summary {
@@ -593,47 +598,51 @@
 
         .summary-item {
             text-align: center;
-            background: #ffffff;
+            background: linear-gradient(135deg, #ffffff 0%, #faf8fc 100%);
             padding: 28px 24px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-            transition: all 0.2s ease;
-            border: 1px solid #e5e9f2;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(212, 165, 255, 0.12);
+            transition: all 0.3s ease;
+            border: 1.5px solid #f0d9f0;
         }
 
         .summary-item:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            border-color: #d4dce8;
+            box-shadow: 0 8px 20px rgba(212, 165, 255, 0.18);
+            border-color: #d4a5ff;
+            transform: translateY(-2px);
         }
 
         .summary-label {
             font-size: 12px;
-            opacity: 0.7;
+            opacity: 0.75;
             margin-bottom: 12px;
             font-weight: 600;
             letter-spacing: 0.5px;
             text-transform: uppercase;
-            color: #6b7280;
+            color: #8b6b9e;
         }
 
         .summary-value {
             font-size: 28px;
             font-weight: 700;
             letter-spacing: -0.5px;
-            color: #3b82f6;
+            background: linear-gradient(135deg, #b3deff, #d4a5ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .success-msg {
             display: none;
-            background: #ecfdf5;
-            color: #065f46;
+            background: #e8f7f3;
+            color: #0f6b56;
             padding: 14px 16px;
-            border-radius: 8px;
+            border-radius: 10px;
             margin-bottom: 24px;
-            border-left: 3px solid #10b981;
+            border-left: 4px solid #0fa080;
             font-weight: 500;
             letter-spacing: 0.2px;
-            box-shadow: 0 2px 6px rgba(16, 185, 129, 0.1);
+            box-shadow: 0 4px 12px rgba(15, 160, 128, 0.15);
             animation: slideDown 0.3s ease;
         }
 
@@ -646,10 +655,10 @@
             margin-top: 48px;
             padding-top: 24px;
             padding-bottom: 24px;
-            border-top: 1px solid #e5e9f2;
+            border-top: 1.5px solid #f0d9f0;
             text-align: center;
             font-size: 12px;
-            color: #9ca3af;
+            color: #a89ab3;
             letter-spacing: 0.2px;
         }
 
@@ -658,7 +667,7 @@
             display: flex;
             gap: 12px;
             margin-bottom: 32px;
-            border-bottom: 1px solid #e5e9f2;
+            border-bottom: 1.5px solid #f0d9f0;
             padding-bottom: 0;
             flex-wrap: wrap;
         }
@@ -670,22 +679,22 @@
             cursor: pointer;
             font-weight: 500;
             font-size: 14px;
-            color: #6b7280;
-            border-bottom: 2px solid transparent;
+            color: #8b6b9e;
+            border-bottom: 3px solid transparent;
             transition: all 0.2s ease;
             position: relative;
             letter-spacing: 0.3px;
         }
 
         .tab-btn.active {
-            color: #3b82f6;
-            border-bottom-color: #3b82f6;
+            color: #7fc8ff;
+            border-bottom-color: #b3deff;
             background: transparent;
             border-radius: 0;
         }
 
         .tab-btn:hover {
-            color: #3b82f6;
+            color: #d4a5ff;
             background: transparent;
         }
 
@@ -699,12 +708,12 @@
 
         /* CONFIGURAÇÕES */
         .config-section {
-            background: #ffffff;
+            background: linear-gradient(135deg, #ffffff 0%, #faf8fc 100%);
             padding: 28px 24px;
-            border-radius: 12px;
+            border-radius: 14px;
             margin-bottom: 24px;
-            border: 1px solid #e5e9f2;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            border: 1.5px solid #f0d9f0;
+            box-shadow: 0 4px 12px rgba(212, 165, 255, 0.1);
         }
 
         .config-section h3 {
@@ -721,29 +730,29 @@
             background: #ffffff;
             border-radius: 12px;
             overflow: hidden;
-            border: 1px solid #e5e9f2;
+            border: 1.5px solid #f0d9f0;
         }
 
         .config-table th {
-            background: #f8f9fc;
+            background: #faf8fc;
             color: #2c3e50;
             padding: 14px 16px;
             text-align: left;
             font-weight: 600;
             border: none;
-            border-bottom: 1px solid #e5e9f2;
+            border-bottom: 1.5px solid #f0d9f0;
             letter-spacing: 0.3px;
             font-size: 13px;
         }
 
         .config-table td {
             padding: 14px 16px;
-            border-bottom: 1px solid #f0f4f8;
+            border-bottom: 1px solid #f8f4fa;
             color: #2c3e50;
         }
 
         .config-table tbody tr:hover {
-            background: #f8f9fc;
+            background: #fef8ff;
             transition: background 0.2s ease;
         }
 
@@ -755,7 +764,7 @@
         .config-table select {
             width: 100%;
             padding: 10px 12px;
-            border: 1px solid #d4dce8;
+            border: 1.5px solid #e5c8e5;
             border-radius: 8px;
             font-size: 13px;
             background: #ffffff;
@@ -768,13 +777,13 @@
         .config-table input:focus,
         .config-table select:focus {
             outline: none;
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-            background: #f0f5ff;
+            border-color: #b3deff;
+            box-shadow: 0 0 0 3px rgba(179, 222, 255, 0.15);
+            background: #f8f5ff;
         }
 
         .btn-save-config {
-            background: #3b82f6;
+            background: linear-gradient(135deg, #b3deff 0%, #d4a5ff 100%);
             color: white;
             border: none;
             padding: 11px 28px;
@@ -783,13 +792,14 @@
             cursor: pointer;
             font-size: 14px;
             transition: all 0.2s ease;
-            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+            box-shadow: 0 4px 12px rgba(179, 222, 255, 0.25);
             letter-spacing: 0.3px;
         }
 
         .btn-save-config:hover {
-            background: #2563eb;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            background: linear-gradient(135deg, #90ceff 0%, #c07aff 100%);
+            box-shadow: 0 6px 16px rgba(212, 165, 255, 0.35);
+            transform: translateY(-1px);
         }
 
         .btn-save-config:active {
@@ -797,7 +807,7 @@
         }
 
         .btn-delete {
-            background: #ef4444;
+            background: linear-gradient(135deg, #ff9db5 0%, #f97499 100%);
             color: white;
             border: none;
             padding: 8px 14px;
@@ -806,12 +816,13 @@
             font-weight: 600;
             font-size: 12px;
             transition: all 0.2s ease;
-            box-shadow: 0 2px 6px rgba(239, 68, 68, 0.15);
+            box-shadow: 0 2px 8px rgba(255, 157, 181, 0.25);
         }
 
         .btn-delete:hover {
-            background: #dc2626;
-            box-shadow: 0 2px 8px rgba(239, 68, 68, 0.25);
+            background: linear-gradient(135deg, #ff7a99 0%, #f85477 100%);
+            box-shadow: 0 4px 12px rgba(248, 84, 119, 0.3);
+            transform: translateY(-1px);
         }
 
         .btn-delete:active {
@@ -885,24 +896,24 @@
 
         /* Refined modern design tweaks */
         .error {
-            background: #fef2f2;
-            color: #991b1b;
-            border-left-color: #ef4444;
-            box-shadow: 0 2px 6px rgba(239, 68, 68, 0.1);
+            background: #ffe6e6;
+            color: #a81e1e;
+            border-left-color: #ff7a7a;
+            box-shadow: 0 4px 12px rgba(255, 122, 122, 0.15);
         }
 
         .demo-box {
-            background: #f0f5ff;
-            border-left: 3px solid #3b82f6;
+            background: #f0e6ff;
+            border-left: 4px solid #d4a5ff;
             padding: 14px 16px;
             margin-top: 20px;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 12px;
-            color: #1e40af;
+            color: #8b5fa8;
         }
 
         .demo-box strong {
-            color: #3b82f6;
+            color: #b897d1;
         }
 
         .form-group label {
@@ -912,24 +923,194 @@
         }
 
         .form-group input {
-            border-color: #d4dce8;
-            background: #ffffff;
+            border-color: #e5c8e5;
+            background: #fff9fd;
             color: #2c3e50;
         }
 
         .form-group input:focus {
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+            border-color: #b3deff;
+            box-shadow: 0 0 0 3px rgba(179, 222, 255, 0.15);
         }
 
         .btn-login {
-            background: #3b82f6;
-            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+            background: linear-gradient(135deg, #b3deff 0%, #d4a5ff 100%);
+            box-shadow: 0 4px 15px rgba(179, 222, 255, 0.3);
         }
 
         .btn-login:hover {
-            background: #2563eb;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            background: linear-gradient(135deg, #90ceff 0%, #c07aff 100%);
+            box-shadow: 0 8px 25px rgba(212, 165, 255, 0.4);
+        }
+
+        /* MODAL FALTAS */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #2c3e50;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #999;
+            padding: 0;
+            width: 32px;
+            height: 32px;
+        }
+
+        .falta-item {
+            background: #f5f7fa;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 4px solid #d4a5ff;
+        }
+
+        .falta-info {
+            flex: 1;
+        }
+
+        .falta-data {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 14px;
+        }
+
+        .falta-atestado {
+            font-size: 12px;
+            color: #7a8a99;
+            margin-top: 2px;
+        }
+
+        .badge-com {
+            background: #d4edda;
+            color: #155724;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .badge-sem {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .btn-remove-falta {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 4px 8px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .btn-remove-falta:hover {
+            background: #ff5252;
+        }
+
+        .modal-form {
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #e5e9f2;
+        }
+
+        .modal-form .form-group {
+            margin-bottom: 12px;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        .btn-add-falta {
+            flex: 1;
+            background: linear-gradient(135deg, #b3deff 0%, #d4a5ff 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-add-falta:hover {
+            background: linear-gradient(135deg, #90ceff 0%, #c07aff 100%);
+        }
+
+        .btn-fechar-modal {
+            flex: 1;
+            background: #e5e9f2;
+            color: #2c3e50;
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-fechar-modal:hover {
+            background: #d0d9e8;
+        }
+
+        .btn-edit-falta {
+            background: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 6px 12px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .btn-edit-falta:hover {
+            background: #3367d6;
         }
     </style>
 </head>
@@ -1010,7 +1191,7 @@
             <!-- TAB: LANÇAMENTO -->
             <div id="tab-lancamento" class="tab-content active">
                 <div class="info-banner">
-                    📅 <strong id="currentMonth">Setembro 2024</strong> - Valores consolidados do Resumo Semanal (Somente Leitura)
+                    📅 <strong id="currentMonth">Setembro 2024</strong> - Valores consolidados do Resumo Semanal (Somente Leitura - Marque ✅ para indicar Pagamento)
                 </div>
 
             <div class="table-wrapper" style="overflow-x: auto;">
@@ -1025,12 +1206,11 @@
             </div>
 
             <div class="summary" id="summarySections">
-                <!-- Preenchido por JavaScript -->
+                <!-- Resumo de pagamentos será preenchido aqui -->
             </div>
 
-                <div class="actions" style="opacity: 0.4; pointer-events: none;">
-                    <button class="btn-save" onclick="saveAllWeeks()" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 12px 28px; border-radius: 6px; font-weight: 600; font-size: 15px; cursor: not-allowed; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);">🚀 Lançar VT do Mês</button>
-                    <button class="btn-clear" onclick="clearAllWeeks()">🗑️ Limpar Tudo</button>
+                <div class="actions">
+                    <button class="btn-save" onclick="salvarStatusPagamento()" style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; border: none; padding: 12px 28px; border-radius: 6px; font-weight: 600; font-size: 15px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);">💾 Salvar Status de Pagamentos</button>
                 </div>
             </div>
 
@@ -1052,10 +1232,12 @@
                     <table class="config-table">
                         <thead>
                             <tr>
-                                <th style="width: 25%;">👤 Colaborador</th>
-                                <th style="width: 15%;">VT DIA</th>
-                                <th style="width: 30%; text-align: center;">Faltas<br><small style="font-weight: 400;">(datas)</small></th>
-                                <th style="width: 30%; text-align: center;">Valor Calculado<br><small style="font-weight: 400;">(R$)</small></th>
+                                <th style="width: 20%;">👤 Colaborador</th>
+                                <th style="width: 12%;">VT DIA</th>
+                                <th style="width: 20%; text-align: center;">📅 Datas das Faltas</th>
+                                <th style="width: 15%; text-align: center;">📄 Atestado</th>
+                                <th style="width: 18%; text-align: center;">Ações</th>
+                                <th style="width: 15%; text-align: center;">Valor<br><small style="font-weight: 400;">(R$)</small></th>
                             </tr>
                         </thead>
                         <tbody id="tabelaSemanalBody">
@@ -1091,11 +1273,13 @@
                     <table class="config-table" style="min-width: 100%;">
                         <thead>
                             <tr>
-                                <th style="width: 30%;">👤 Colaborador</th>
-                                <th style="width: 15%;">VT Padrão</th>
-                                <th style="width: 18%; text-align: center;">Total Faltas</th>
-                                <th style="width: 18%; text-align: right;">Total VT Mês</th>
-                                <th style="width: 19%; text-align: right;">Média Semanal</th>
+                                <th style="width: 20%;">👤 Colaborador</th>
+                                <th style="width: 12%;">VT Padrão</th>
+                                <th style="width: 13%; text-align: center;">Total Faltas</th>
+                                <th style="width: 13%; text-align: center;">✅ COM Atestado</th>
+                                <th style="width: 13%; text-align: center;">❌ SEM Atestado</th>
+                                <th style="width: 13%; text-align: right;">Total VT Mês</th>
+                                <th style="width: 16%; text-align: center;">Ações</th>
                             </tr>
                         </thead>
                         <tbody id="tabelaMensalBody">
@@ -1112,10 +1296,6 @@
                     <div class="summary-item">
                         <div class="summary-label">👥 Colaboradores Ativos</div>
                         <div class="summary-value" id="mensalColabs">0</div>
-                    </div>
-                    <div class="summary-item">
-                        <div class="summary-label">📊 Média por Colaborador</div>
-                        <div class="summary-value" id="mensalMedia">R$ 0,00</div>
                     </div>
                 </div>
 
@@ -1187,6 +1367,13 @@
                                    min="0"
                                    style="width: 100%; padding: 10px 12px; border: 1px solid #d4dce8; border-radius: 8px; font-size: 14px; text-align: right; background: #f0f5ff; color: #2c3e50;">
                         </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 13px; color: #2c3e50;">Cargo</label>
+                            <input type="text"
+                                   id="newColabCargo"
+                                   placeholder="Ex: Operacional"
+                                   style="width: 100%; padding: 10px 12px; border: 1px solid #d4dce8; border-radius: 8px; font-size: 14px; background: white; color: #2c3e50;">
+                        </div>
                         <div style="display: flex; align-items: flex-end;">
                             <button class="btn-save-config" onclick="addNewColaborador()" style="width: 100%; padding: 10px;">Adicionar Colaborador</button>
                         </div>
@@ -1199,12 +1386,13 @@
                         <table class="config-table">
                             <thead>
                                 <tr>
-                                    <th style="width: 25%;">Colaborador</th>
-                                    <th style="width: 20%;">Empresa</th>
-                                    <th style="width: 18%;">VT Padrão (6 dias)</th>
-                                    <th style="width: 15%; text-align: center;">VT DIA*</th>
-                                    <th style="width: 10%; text-align: center;">Ativo</th>
-                                    <th style="width: 12%; text-align: center;">Ação</th>
+                                    <th style="width: 20%;">Colaborador</th>
+                                    <th style="width: 18%;">Empresa</th>
+                                    <th style="width: 15%;">Cargo</th>
+                                    <th style="width: 14%;">VT Padrão (6 dias)</th>
+                                    <th style="width: 12%; text-align: center;">VT DIA*</th>
+                                    <th style="width: 8%; text-align: center;">Ativo</th>
+                                    <th style="width: 13%; text-align: center;">Ação</th>
                                 </tr>
                             </thead>
                             <tbody id="configTableBody">
@@ -1226,6 +1414,7 @@
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script>
         // Configuração padrão de empresas
         const empresasDefault = {
@@ -1236,24 +1425,24 @@
 
         // Colaboradores com empresa (padrão)
         const colaboradoresDefault = [
-            { mat: "001", nome: "Angelo Antonio Domingos de Oliveira", vt: 63.60, vtDia: 10.60, empresa: "Empresa A", ativo: true },
-            { mat: "002", nome: "Carolina Cristina dos Santos Colaneri", vt: 63.60, vtDia: 10.60, empresa: "Empresa A", ativo: true },
-            { mat: "003", nome: "Diego Cruz de Almeida", vt: 53.00, vtDia: 8.83, empresa: "Empresa A", ativo: true },
-            { mat: "004", nome: "Gabriel Vieira da Silva", vt: 106.00, vtDia: 17.67, empresa: "Empresa B", ativo: true },
-            { mat: "005", nome: "Gabrielli Alves das Neves", vt: 63.60, vtDia: 10.60, empresa: "Empresa A", ativo: true },
-            { mat: "006", nome: "GUSTAVO MONTEIRO", vt: 53.00, vtDia: 8.83, empresa: "Empresa A", ativo: true },
-            { mat: "007", nome: "Gustavo Ventura Nunes de Oliveira", vt: 128.40, vtDia: 21.40, empresa: "Empresa B", ativo: true },
-            { mat: "008", nome: "JENNIFER", vt: 63.60, vtDia: 10.60, empresa: "Empresa A", ativo: true },
-            { mat: "009", nome: "João Vytor Cardoso Ferreira", vt: 63.60, vtDia: 10.60, empresa: "Empresa A", ativo: true },
-            { mat: "010", nome: "LUCAS NASC.", vt: 63.60, vtDia: 10.60, empresa: "Empresa A", ativo: true },
-            { mat: "011", nome: "Marcelo Jurcik Ferreira", vt: 63.60, vtDia: 10.60, empresa: "Empresa A", ativo: true },
-            { mat: "012", nome: "Mayra Tuanny Barbosa Rosa", vt: 63.60, vtDia: 10.60, empresa: "Empresa A", ativo: true },
-            { mat: "013", nome: "Paulo Marcos Silverio Augusto", vt: 63.60, vtDia: 10.60, empresa: "Empresa A", ativo: true },
-            { mat: "014", nome: "Rafaela Alves das Neves", vt: 53.00, vtDia: 8.83, empresa: "Empresa A", ativo: true },
-            { mat: "015", nome: "Rafaella Vitoria Cavalcante Nascimento", vt: 42.40, vtDia: 7.07, empresa: "Empresa C", ativo: true },
-            { mat: "016", nome: "Vitoria Maria da Silva Viana", vt: 63.60, vtDia: 10.60, empresa: "Empresa A", ativo: true },
-            { mat: "017", nome: "Wagner Tomaz da Silva", vt: 53.00, vtDia: 8.83, empresa: "Empresa A", ativo: true },
-            { mat: "018", nome: "Girleide Alves", vt: 53.00, vtDia: 8.83, empresa: "Empresa C", ativo: true },
+            { mat: "001", nome: "Angelo Antonio Domingos de Oliveira", vt: 63.60, vtDia: 10.60, empresa: "Empresa A", cargo: "Cargo não definido", dataAdmissao: "2024-01-01", ativo: true },
+            { mat: "002", nome: "Carolina Cristina dos Santos Colaneri", vt: 63.60, vtDia: 10.60, empresa: "Empresa A", cargo: "Cargo não definido", dataAdmissao: "2024-01-01", ativo: true },
+            { mat: "003", nome: "Diego Cruz de Almeida", vt: 53.00, vtDia: 8.83, empresa: "Empresa A", cargo: "Cargo não definido", dataAdmissao: "2024-01-01", ativo: true },
+            { mat: "004", nome: "Gabriel Vieira da Silva", vt: 106.00, vtDia: 17.67, empresa: "Empresa B", cargo: "Cargo não definido", dataAdmissao: "2024-01-01", ativo: true },
+            { mat: "005", nome: "Gabrielli Alves das Neves", vt: 63.60, vtDia: 10.60, empresa: "Empresa A", cargo: "Cargo não definido", dataAdmissao: "2024-01-01", ativo: true },
+            { mat: "006", nome: "GUSTAVO MONTEIRO", vt: 53.00, vtDia: 8.83, empresa: "Empresa A", cargo: "Cargo não definido", dataAdmissao: "2024-01-01", ativo: true },
+            { mat: "007", nome: "Gustavo Ventura Nunes de Oliveira", vt: 128.40, vtDia: 21.40, empresa: "Empresa B", cargo: "Cargo não definido", dataAdmissao: "2024-01-01", ativo: true },
+            { mat: "008", nome: "JENNIFER", vt: 63.60, vtDia: 10.60, empresa: "Empresa A", cargo: "Cargo não definido", dataAdmissao: "2024-01-01", ativo: true },
+            { mat: "009", nome: "João Vytor Cardoso Ferreira", vt: 63.60, vtDia: 10.60, empresa: "Empresa A", cargo: "Cargo não definido", dataAdmissao: "2024-01-01", ativo: true },
+            { mat: "010", nome: "LUCAS NASC.", vt: 63.60, vtDia: 10.60, empresa: "Empresa A", cargo: "Cargo não definido", dataAdmissao: "2024-01-01", ativo: true },
+            { mat: "011", nome: "Marcelo Jurcik Ferreira", vt: 63.60, vtDia: 10.60, empresa: "Empresa A", cargo: "Cargo não definido", dataAdmissao: "2024-01-01", ativo: true },
+            { mat: "012", nome: "Mayra Tuanny Barbosa Rosa", vt: 63.60, vtDia: 10.60, empresa: "Empresa A", cargo: "Cargo não definido", dataAdmissao: "2024-01-01", ativo: true },
+            { mat: "013", nome: "Paulo Marcos Silverio Augusto", vt: 63.60, vtDia: 10.60, empresa: "Empresa A", cargo: "Cargo não definido", dataAdmissao: "2024-01-01", ativo: true },
+            { mat: "014", nome: "Rafaela Alves das Neves", vt: 53.00, vtDia: 8.83, empresa: "Empresa A", cargo: "Cargo não definido", dataAdmissao: "2024-01-01", ativo: true },
+            { mat: "015", nome: "Rafaella Vitoria Cavalcante Nascimento", vt: 42.40, vtDia: 7.07, empresa: "Empresa C", cargo: "Cargo não definido", dataAdmissao: "2024-01-01", ativo: true },
+            { mat: "016", nome: "Vitoria Maria da Silva Viana", vt: 63.60, vtDia: 10.60, empresa: "Empresa A", cargo: "Cargo não definido", dataAdmissao: "2024-01-01", ativo: true },
+            { mat: "017", nome: "Wagner Tomaz da Silva", vt: 53.00, vtDia: 8.83, empresa: "Empresa A", cargo: "Cargo não definido", dataAdmissao: "2024-01-01", ativo: true },
+            { mat: "018", nome: "Girleide Alves", vt: 53.00, vtDia: 8.83, empresa: "Empresa C", cargo: "Cargo não definido", dataAdmissao: "2024-01-01", ativo: true },
         ];
 
         let colaboradores = [];
@@ -1683,12 +1872,14 @@
             colaboradores.forEach((colab, idx) => {
                 const nomeInput = document.querySelector(`input[data-mat="${colab.mat}"][data-type="nome"]`);
                 const empresaSelect = document.querySelector(`select[data-mat="${colab.mat}"][data-type="empresa"]`);
+                const cargoInput = document.querySelector(`input[data-mat="${colab.mat}"][data-type="cargo"]`);
                 const vtInput = document.querySelector(`input[data-mat="${colab.mat}"][data-type="vt"]`);
                 const vtDiaInput = document.querySelector(`input[data-mat="${colab.mat}"][data-type="vtdia"]`);
                 const ativoCheck = document.querySelector(`input[data-mat="${colab.mat}"][data-type="ativo"]`);
 
                 if (nomeInput) colab.nome = nomeInput.value;
                 if (empresaSelect) colab.empresa = empresaSelect.value;
+                if (cargoInput) colab.cargo = cargoInput.value || 'Cargo não definido';
                 if (vtInput) colab.vt = parseFloat(vtInput.value) || 0;
                 if (vtDiaInput) colab.vtDia = parseFloat(vtDiaInput.value) || 0;
                 if (ativoCheck) colab.ativo = ativoCheck.checked;
@@ -1738,6 +1929,13 @@
                         </select>
                     </td>
                     <td>
+                        <input type="text"
+                               data-mat="${colab.mat}"
+                               data-type="cargo"
+                               value="${colab.cargo || 'Cargo não definido'}"
+                               style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                    </td>
+                    <td>
                         <input type="number"
                                data-mat="${colab.mat}"
                                data-type="vt"
@@ -1775,6 +1973,7 @@
             const empresa = document.getElementById('newColabEmpresa').value;
             const vt = parseFloat(document.getElementById('newColabVt').value) || 0;
             const vtDia = parseFloat(document.getElementById('newColabVtDia').value) || 0;
+            const cargo = document.getElementById('newColabCargo').value.trim() || 'Cargo não definido';
 
             if (!nome) {
                 alert('⚠️ Por favor, preencha o nome do colaborador!');
@@ -1801,6 +2000,8 @@
                 vt: vt,
                 vtDia: vtDia,
                 empresa: empresa,
+                cargo: cargo,
+                dataAdmissao: new Date().toISOString().split('T')[0],
                 ativo: true
             };
 
@@ -1810,6 +2011,7 @@
             document.getElementById('newColabNome').value = '';
             document.getElementById('newColabVt').value = '';
             document.getElementById('newColabVtDia').value = '';
+            document.getElementById('newColabCargo').value = '';
 
             renderConfigTable();
 
@@ -2000,16 +2202,28 @@
 
             let headerHTML = `
                 <tr>
-                    <th style="width: 20%; position: sticky; left: 0; background: white; z-index: 10;">👤 Colaborador</th>
+                    <th style="width: 18%; position: sticky; left: 0; background: white; z-index: 10;">👤 Colaborador</th>
                     <th style="width: 10%; text-align: center;">VT Padrão</th>
             `;
 
             mes.semanas.forEach(semana => {
-                headerHTML += `<th style="width: 14%; text-align: center; background: #f0f0f0; border-right: 1px solid #ddd;"><strong>Semana ${semana.num}</strong><br><small>(${semana.data})</small><br><small style="font-weight: 400;">Valor</small></th>`;
+                headerHTML += `<th colspan="2" style="width: 14%; text-align: center; background: #f0f0f0; border-right: 1px solid #ddd;"><strong>Semana ${semana.num}</strong><br><small>(${semana.data})</small></th>`;
             });
 
             headerHTML += `<th style="width: 10%; text-align: right; background: #f0f0f0;">Total Mês</th>`;
             headerHTML += `</tr>`;
+
+            // Segunda linha do header com subheaders
+            headerHTML += `<tr style="background: #f9f9f9;">
+                    <th style="width: 18%; position: sticky; left: 0; background: white; z-index: 10;"></th>
+                    <th style="width: 10%; text-align: center;"></th>`;
+
+            mes.semanas.forEach(semana => {
+                headerHTML += `<th style="width: 7%; text-align: center; font-weight: 400; font-size: 12px; border-right: 1px solid #ddd;">Valor</th>`;
+                headerHTML += `<th style="width: 7%; text-align: center; font-weight: 400; font-size: 12px; border-right: 1px solid #ddd;">✅ Pago</th>`;
+            });
+
+            headerHTML += `<th style="width: 10%; text-align: center;"></th></tr>`;
 
             thead.innerHTML = headerHTML;
 
@@ -2017,16 +2231,32 @@
 
             colabsAtivos.forEach(colab => {
                 const tr = document.createElement('tr');
-                let rowHTML = `<td style="position: sticky; left: 0; background: white; z-index: 5;">${colab.nome}</td>`;
+                let rowHTML = `<td style="position: sticky; left: 0; background: white; z-index: 5; font-weight: 500;">${colab.nome}</td>`;
                 rowHTML += `<td style="text-align: right;">R$ ${parseFloat(colab.vt).toFixed(2)}</td>`;
 
                 let totalMes = 0;
 
                 mes.semanas.forEach(semana => {
                     const semanaKey = `${colab.mat}_${semana.num}_valor`;
+                    const pagoKey = `${colab.mat}_${semana.num}_pago`;
                     const valor = (allData[monthKey][semanaKey] || 0);
+                    const isPago = allData[monthKey][pagoKey] || false;
+
                     totalMes += parseFloat(valor);
+
+                    // Coluna de Valor
                     rowHTML += `<td style="text-align: center; background: #fafafa;">R$ ${parseFloat(valor).toFixed(2)}</td>`;
+
+                    // Coluna de Pago (Checkbox)
+                    rowHTML += `<td style="text-align: center; background: #fafafa;">
+                        <input type="checkbox"
+                               data-mat="${colab.mat}"
+                               data-semana="${semana.num}"
+                               data-pago="true"
+                               ${isPago ? 'checked' : ''}
+                               onchange="atualizarStatusPago('${colab.mat}', ${semana.num})"
+                               style="width: 18px; height: 18px; cursor: pointer;">
+                    </td>`;
                 });
 
                 rowHTML += `<td style="text-align: right; background: #f0f0f0; font-weight: 600;">R$ ${parseFloat(totalMes).toFixed(2)}</td>`;
@@ -2034,6 +2264,92 @@
                 tr.innerHTML = rowHTML;
                 tbody.appendChild(tr);
             });
+
+            // Atualizar resumo de pagamentos após renderizar a tabela
+            atualizarResumoPagamentos();
+        }
+
+        // Atualizar status de pago
+        function atualizarStatusPago(mat, semana) {
+            const monthKey = `${currentYear}-${currentMonth}`;
+            if (!allData[monthKey]) allData[monthKey] = {};
+
+            const pagoKey = `${mat}_${semana}_pago`;
+            const checkbox = document.querySelector(`input[data-mat="${mat}"][data-semana="${semana}"]`);
+
+            if (checkbox) {
+                allData[monthKey][pagoKey] = checkbox.checked;
+                localStorage.setItem('vtData', JSON.stringify(allData));
+                atualizarResumoPagamentos();
+
+                // Mostrar feedback visual
+                if (checkbox.checked) {
+                    checkbox.style.accentColor = '#155724';
+                }
+            }
+        }
+
+        // Atualizar resumo de pagamentos
+        function atualizarResumoPagamentos() {
+            const monthKey = `${currentYear}-${currentMonth}`;
+            const mes = meses[monthKey];
+
+            if (!mes || !mes.semanas) return;
+
+            const summarySections = document.getElementById('summarySections');
+            if (!summarySections) return;
+
+            // Contar pagamentos realizados
+            let totalPago = 0;
+            let totalAindaPagar = 0;
+            let contadorPagos = 0;
+            let contadorTotal = 0;
+
+            colaboradores.filter(c => c.ativo).forEach(colab => {
+                mes.semanas.forEach(semana => {
+                    const pagoKey = `${colab.mat}_${semana.num}_pago`;
+                    const valorKey = `${colab.mat}_${semana.num}_valor`;
+                    const isPago = allData[monthKey][pagoKey] || false;
+                    const valor = parseFloat(allData[monthKey][valorKey] || 0);
+
+                    contadorTotal++;
+                    if (isPago) {
+                        totalPago += valor;
+                        contadorPagos++;
+                    } else {
+                        totalAindaPagar += valor;
+                    }
+                });
+            });
+
+            const percentualPago = contadorTotal > 0 ? Math.round((contadorPagos / contadorTotal) * 100) : 0;
+
+            summarySections.innerHTML = `
+                <div class="summary-item" style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <div class="summary-label" style="color: rgba(255,255,255,0.9);">💰 Pagamentos Realizados</div>
+                    <div class="summary-value" style="color: white;">R$ ${parseFloat(totalPago).toFixed(2)}</div>
+                    <div style="font-size: 13px; color: rgba(255,255,255,0.85); margin-top: 8px;">${contadorPagos} de ${contadorTotal} parcelas (${percentualPago}%)</div>
+                </div>
+                <div class="summary-item" style="background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%); color: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <div class="summary-label" style="color: rgba(255,255,255,0.9);">⏳ Ainda a Pagar</div>
+                    <div class="summary-value" style="color: white;">R$ ${parseFloat(totalAindaPagar).toFixed(2)}</div>
+                    <div style="font-size: 13px; color: rgba(255,255,255,0.85); margin-top: 8px;">${contadorTotal - contadorPagos} parcelas pendentes</div>
+                </div>
+            `;
+        }
+
+        // Salvar status de pagamento com feedback
+        function salvarStatusPagamento() {
+            const monthKey = `${currentYear}-${currentMonth}`;
+            localStorage.setItem('vtData', JSON.stringify(allData));
+
+            document.getElementById('successMsg').textContent = '✅ Status de pagamentos salvo com sucesso!';
+            document.getElementById('successMsg').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('successMsg').style.display = 'none';
+            }, 3000);
+
+            atualizarResumoPagamentos();
         }
 
         function renderSemanalTab() {
@@ -2092,22 +2408,38 @@
                 const faltasKey = `${colab.mat}_${weekNum}_faltas`;
                 const valorKey = `${colab.mat}_${weekNum}_valor`;
 
-                const faltas = allData[monthKey][faltasKey] || '';
+                const faltasData = allData[monthKey][faltasKey] || [];
+                const faltasArray = Array.isArray(faltasData) ? faltasData : [];
                 const valor = parseFloat(allData[monthKey][valorKey] || 0);
 
-                const vtCalculado = colab.vtDia * (6 - (faltas.split(/[,\s]+/).filter(f => f).length || 0));
+                const vtCalculado = colab.vtDia * (6 - faltasArray.length);
 
                 totalSemanal += vtCalculado;
+
+                // Formatar datas das faltas para exibição
+                const datasFormatadas = faltasArray.map(f => {
+                    const data = new Date(f.data + 'T00:00:00');
+                    return data.toLocaleDateString('pt-BR');
+                }).join(', ');
+
+                // Contar atestados
+                const comAtestado = faltasArray.filter(f => f.atestado === 'com').length;
+                const semAtestado = faltasArray.filter(f => f.atestado === 'sem').length;
+                const atestadoText = comAtestado > 0 || semAtestado > 0
+                    ? `${comAtestado}✅ / ${semAtestado}❌`
+                    : '-';
 
                 tr.innerHTML = `
                     <td>${colab.nome}</td>
                     <td style="text-align: right;">R$ ${parseFloat(colab.vtDia).toFixed(2)}</td>
+                    <td style="text-align: center; font-size: 13px; color: #2c3e50;">
+                        ${datasFormatadas || '-'}
+                    </td>
+                    <td style="text-align: center; font-size: 13px;">
+                        ${atestadoText}
+                    </td>
                     <td style="text-align: center;">
-                        <input type="text"
-                               id="faltas_${colab.mat}"
-                               value="${faltas}"
-                               placeholder="01, 02, 03"
-                               style="width: 100%; padding: 8px 12px; border: 1px solid #d4dce8; border-radius: 8px; background: #fffacd;">
+                        <button class="btn-edit-falta" onclick="abrirModalFaltas('${colab.mat}', ${weekNum})">✏️ Editar</button>
                     </td>
                     <td style="text-align: right;">R$ ${parseFloat(vtCalculado).toFixed(2)}</td>
                 `;
@@ -2120,26 +2452,8 @@
         }
 
         function saveSemanalWeek() {
-            const monthKey = `${currentYear}-${currentMonth}`;
-            if (!allData[monthKey]) allData[monthKey] = {};
-
-            const colabsAtivos = colaboradores.filter(c => c.ativo);
-
-            colabsAtivos.forEach(colab => {
-                const faltasInput = document.getElementById(`faltas_${colab.mat}`);
-                if (faltasInput) {
-                    const faltas = faltasInput.value;
-                    const faltasKey = `${colab.mat}_${currentWeek}_faltas`;
-                    const valorKey = `${colab.mat}_${currentWeek}_valor`;
-
-                    allData[monthKey][faltasKey] = faltas;
-
-                    const faltasCount = faltas.split(/[,\s]+/).filter(f => f).length;
-                    const vtCalculado = colab.vtDia * (6 - faltasCount);
-                    allData[monthKey][valorKey] = vtCalculado;
-                }
-            });
-
+            // As faltas são agora salvas automaticamente via salvarFaltas()
+            // Esta função mantida para compatibilidade com botão de salvar
             localStorage.setItem('vtData', JSON.stringify(allData));
 
             document.getElementById('successMsg').textContent = '✅ Semana salva com sucesso!';
@@ -2148,7 +2462,6 @@
                 document.getElementById('successMsg').style.display = 'none';
             }, 3000);
 
-            renderTable();
             updateTotals();
         }
 
@@ -2170,40 +2483,47 @@
                 const tr = document.createElement('tr');
 
                 let totalFaltas = 0;
+                let totalComAtestado = 0;
+                let totalSemAtestado = 0;
                 let totalVT = 0;
 
                 mes.semanas.forEach(semana => {
                     const faltasKey = `${colab.mat}_${semana.num}_faltas`;
                     const valorKey = `${colab.mat}_${semana.num}_valor`;
 
-                    const faltas = allData[monthKey][faltasKey] || '';
+                    const faltasData = allData[monthKey][faltasKey] || [];
+                    const faltasArray = Array.isArray(faltasData) ? faltasData : [];
                     const valor = parseFloat(allData[monthKey][valorKey] || 0);
 
-                    totalFaltas += faltas.split(/[,\s]+/).filter(f => f).length;
+                    totalFaltas += faltasArray.length;
+
+                    // Contar atestados
+                    totalComAtestado += faltasArray.filter(f => f.atestado === 'com').length;
+                    totalSemAtestado += faltasArray.filter(f => f.atestado === 'sem').length;
+
                     totalVT += valor;
                 });
 
                 totalMensal += totalVT;
 
-                const mediaVT = mes.semanas.length > 0 ? totalVT / mes.semanas.length : 0;
-
                 tr.innerHTML = `
                     <td>${colab.nome}</td>
                     <td style="text-align: right;">R$ ${parseFloat(colab.vt).toFixed(2)}</td>
-                    <td style="text-align: center;">${totalFaltas}</td>
+                    <td style="text-align: center; font-weight: 600; color: #2c3e50;">${totalFaltas}</td>
+                    <td style="text-align: center; color: #155724; font-weight: 600;">${totalComAtestado}</td>
+                    <td style="text-align: center; color: #721c24; font-weight: 600;">${totalSemAtestado}</td>
                     <td style="text-align: right;">R$ ${parseFloat(totalVT).toFixed(2)}</td>
-                    <td style="text-align: right;">R$ ${parseFloat(mediaVT).toFixed(2)}</td>
+                    <td style="text-align: center;">
+                        <button class="btn-edit-falta" onclick="gerarReciboPDF('${colab.mat}', '${colab.nome}')">📄 Recibo</button>
+                    </td>
                 `;
 
                 tbody.appendChild(tr);
             });
 
-            const mediaColabs = colabsAtivos.length > 0 ? totalMensal / colabsAtivos.length : 0;
-
             document.getElementById('mensalTitle').textContent = mes.nome;
             document.getElementById('mensalTotal').textContent = `R$ ${parseFloat(totalMensal).toFixed(2)}`;
             document.getElementById('mensalColabs').textContent = colabsAtivos.length;
-            document.getElementById('mensalMedia').textContent = `R$ ${parseFloat(mediaColabs).toFixed(2)}`;
         }
 
         function updateTotals() {
@@ -2235,6 +2555,349 @@
             alert('📥 Função de exportar PDF em desenvolvimento');
         }
 
+        function gerarReciboPDF(mat, nome) {
+            const monthKey = `${currentYear}-${currentMonth}`;
+            const mes = meses[monthKey];
+
+            if (!mes || !mes.semanas) {
+                alert('⚠️ Nenhum dado disponível para este mês');
+                return;
+            }
+
+            // Coletar todas as faltas e calcular valores
+            let todasAsFaltas = [];
+            let totalVT = 0;
+            let diasComFalta = 0;
+
+            mes.semanas.forEach(semana => {
+                const faltasKey = `${mat}_${semana.num}_faltas`;
+                const valorKey = `${mat}_${semana.num}_valor`;
+
+                const faltasData = allData[monthKey][faltasKey] || [];
+                const faltasArray = Array.isArray(faltasData) ? faltasData : [];
+                const valor = parseFloat(allData[monthKey][valorKey] || 0);
+
+                faltasArray.forEach(falta => {
+                    todasAsFaltas.push({
+                        data: falta.dataFormatada || new Date(falta.data + 'T00:00:00').toLocaleDateString('pt-BR'),
+                        atestado: falta.atestado === 'com' ? 'Falta justificada' : 'Falta injustificada',
+                        valor: valor / (6 - faltasArray.length) // valor por dia
+                    });
+                    diasComFalta++;
+                });
+
+                totalVT += valor;
+            });
+
+            // Encontrar o colaborador para pegar informações
+            const colab = colaboradores.find(c => c.mat === mat);
+            const vtDia = colab ? colab.vtDia : 0;
+            const vtBruto = colab ? colab.vt : 0;
+            const cargo = colab ? colab.cargo : 'Não informado';
+            const empresa = colab ? colab.empresa : 'Não informada';
+
+            // Calcular desconto
+            const totalDesconto = vtBruto - totalVT;
+            const diasPrevistos = mes.semanas.length * 6; // 6 dias por semana (segunda a sábado)
+            const diasPagos = diasPrevistos - diasComFalta;
+
+            // Criar PDF usando jsPDF
+            const { jsPDF } = window;
+            const doc = new jsPDF({
+                orientation: 'portrait',
+                unit: 'mm',
+                format: 'a4'
+            });
+
+            let yPos = 15;
+            const pageWidth = 210;
+            const pageHeight = 297;
+            const leftMargin = 15;
+            const rightMargin = 15;
+            const contentWidth = pageWidth - (leftMargin + rightMargin);
+
+            // CABEÇALHO DA EMPRESA
+            doc.setFontSize(12);
+            doc.setFont(undefined, 'bold');
+            doc.text('KOUCK URBAN COM. DE MODAS E VESTUÁRIOS LTDA', leftMargin, yPos);
+            yPos += 7;
+
+            doc.setFontSize(10);
+            doc.setFont(undefined, 'normal');
+            doc.text('CNPJ: 50.427.419/0001-00', leftMargin, yPos);
+            yPos += 12;
+
+            // SEÇÃO DE INFORMAÇÕES DO COLABORADOR
+            doc.setFontSize(11);
+            doc.setFont(undefined, 'bold');
+            doc.text('DADOS DO COLABORADOR', leftMargin, yPos);
+            yPos += 7;
+
+            doc.setFontSize(10);
+            doc.setFont(undefined, 'normal');
+            doc.text(`Colaborador: ${nome}`, leftMargin, yPos);
+            yPos += 6;
+            doc.text(`Cargo: ${cargo}`, leftMargin, yPos);
+            yPos += 6;
+            doc.text(`Matrícula: ${mat}`, leftMargin, yPos);
+            yPos += 6;
+            doc.text(`Empresa: ${empresa}`, leftMargin, yPos);
+            yPos += 6;
+
+            // Período e data de pagamento
+            const [ano, mes_num] = monthKey.split('-');
+            const dataInicio = `01/${mes_num}/${ano}`;
+            const diasMes = new Date(parseInt(ano), parseInt(mes_num), 0).getDate();
+            const dataFim = `${diasMes}/${mes_num}/${ano}`;
+            const dataPagamento = new Date().toLocaleDateString('pt-BR');
+
+            doc.text(`Competência: ${mes.nome}`, leftMargin, yPos);
+            yPos += 6;
+            doc.text(`Período: ${dataInicio} a ${dataFim}`, leftMargin, yPos);
+            yPos += 6;
+            doc.text(`Data do Pagamento: ${dataPagamento}`, leftMargin, yPos);
+            yPos += 10;
+
+            // DEMONSTRATIVO MENSAL
+            doc.setFont(undefined, 'bold');
+            doc.setFontSize(11);
+            doc.text('DEMONSTRATIVO MENSAL', leftMargin, yPos);
+            yPos += 8;
+
+            // Cabeçalho da tabela
+            doc.setFontSize(10);
+            doc.setFont(undefined, 'bold');
+            doc.setFillColor(200, 200, 200);
+            doc.rect(leftMargin, yPos - 5, contentWidth, 6, 'F');
+            doc.text('DESCRIÇÃO', leftMargin + 2, yPos);
+            doc.text('REFERÊNCIA', leftMargin + 100, yPos);
+            doc.text('VALOR', leftMargin + contentWidth - 15, yPos);
+            yPos += 8;
+
+            // Linhas da tabela
+            doc.setFont(undefined, 'normal');
+            doc.setFontSize(9);
+
+            // Valor diário do transporte
+            doc.text('Valor diário do transporte (Ida e volta)', leftMargin + 2, yPos);
+            doc.text(`R$ ${vtDia.toFixed(2)}`, leftMargin + contentWidth - 15, yPos);
+            yPos += 6;
+
+            // Dias previstos para utilização
+            doc.text('Dias previstos para utilização', leftMargin + 2, yPos);
+            doc.text(`${diasPrevistos} dias`, leftMargin + 100, yPos);
+            const valorDiasPrevistos = diasPrevistos * vtDia;
+            doc.text(`R$ ${valorDiasPrevistos.toFixed(2)}`, leftMargin + contentWidth - 15, yPos);
+            yPos += 6;
+
+            // Desconto por faltas
+            doc.text('Desconto por faltas', leftMargin + 2, yPos);
+            doc.text(`${diasComFalta} dias`, leftMargin + 100, yPos);
+            doc.text(`-R$ ${totalDesconto.toFixed(2)}`, leftMargin + contentWidth - 15, yPos);
+            yPos += 8;
+
+            // Valor líquido
+            doc.setFont(undefined, 'bold');
+            doc.setFillColor(240, 240, 240);
+            doc.rect(leftMargin, yPos - 5, contentWidth, 6, 'F');
+            doc.text('VALOR LÍQUIDO DO BENEFÍCIO', leftMargin + 2, yPos);
+            doc.text(`${diasPagos} dias`, leftMargin + 100, yPos);
+            doc.text(`R$ ${totalVT.toFixed(2)}`, leftMargin + contentWidth - 15, yPos);
+            yPos += 12;
+
+            // DETALHAMENTO DOS DESCONTOS
+            if (todasAsFaltas.length > 0) {
+                doc.setFont(undefined, 'bold');
+                doc.setFontSize(11);
+                doc.text('DETALHAMENTO DOS DESCONTOS', leftMargin, yPos);
+                yPos += 8;
+
+                // Cabeçalho
+                doc.setFontSize(10);
+                doc.setFillColor(200, 200, 200);
+                doc.rect(leftMargin, yPos - 5, contentWidth, 6, 'F');
+                doc.text('DATA', leftMargin + 2, yPos);
+                doc.text('MOTIVO', leftMargin + 30, yPos);
+                doc.text('VALOR', leftMargin + contentWidth - 15, yPos);
+                yPos += 8;
+
+                // Linhas de faltas
+                doc.setFont(undefined, 'normal');
+                doc.setFontSize(9);
+                todasAsFaltas.forEach(falta => {
+                    if (yPos > pageHeight - 30) {
+                        doc.addPage();
+                        yPos = 15;
+                    }
+                    doc.text(falta.data, leftMargin + 2, yPos);
+                    doc.text(falta.atestado, leftMargin + 30, yPos);
+                    doc.text(`-R$ ${vtDia.toFixed(2)}`, leftMargin + contentWidth - 15, yPos);
+                    yPos += 6;
+                });
+                yPos += 2;
+            }
+
+            // RESUMO FINANCEIRO
+            doc.setFont(undefined, 'bold');
+            doc.setFontSize(11);
+            doc.text('RESUMO FINANCEIRO', leftMargin, yPos);
+            yPos += 8;
+
+            doc.setFontSize(10);
+            doc.setFillColor(240, 240, 240);
+            doc.rect(leftMargin, yPos - 5, contentWidth, 6, 'F');
+            doc.text('Valor bruto mensal:', leftMargin + 2, yPos);
+            doc.text(`R$ ${vtBruto.toFixed(2)}`, leftMargin + contentWidth - 15, yPos);
+            yPos += 8;
+
+            doc.rect(leftMargin, yPos - 5, contentWidth, 6, 'F');
+            doc.text('Total de descontos:', leftMargin + 2, yPos);
+            doc.text(`-R$ ${totalDesconto.toFixed(2)}`, leftMargin + contentWidth - 15, yPos);
+            yPos += 8;
+
+            doc.setFont(undefined, 'bold');
+            doc.setFillColor(200, 200, 200);
+            doc.rect(leftMargin, yPos - 5, contentWidth, 6, 'F');
+            doc.text('VALOR LÍQUIDO A RECEBER:', leftMargin + 2, yPos);
+            doc.text(`R$ ${totalVT.toFixed(2)}`, leftMargin + contentWidth - 15, yPos);
+            yPos += 12;
+
+            // DECLARAÇÃO DE RECEBIMENTO
+            doc.setFont(undefined, 'bold');
+            doc.setFontSize(11);
+            doc.text('DECLARAÇÃO DE RECEBIMENTO', leftMargin, yPos);
+            yPos += 8;
+
+            doc.setFont(undefined, 'normal');
+            doc.setFontSize(10);
+            doc.text('Declaro ter recebido o comprovante de crédito do Vale Transporte conforme descriminado acima.', leftMargin, yPos);
+            yPos += 12;
+
+            // Assinatura
+            doc.text('_________________________________', leftMargin, yPos);
+            doc.setFontSize(9);
+            doc.text('Assinatura do Colaborador', leftMargin, yPos + 4);
+            yPos += 12;
+
+            doc.text('_________________________________', leftMargin + contentWidth - 50, yPos);
+            doc.setFontSize(9);
+            doc.text('Data', leftMargin + contentWidth - 50, yPos + 4);
+
+            // Salvar PDF
+            doc.save(`Recibo_VT_${nome}_${mes.nome}.pdf`);
+        }
+
+        // GERENCIAMENTO DE FALTAS
+        let faltasEmEdicao = [];
+        let matEmEdicao = '';
+        let semanaEmEdicao = '';
+
+        function abrirModalFaltas(mat, semana) {
+            matEmEdicao = mat;
+            semanaEmEdicao = semana;
+            const monthKey = `${currentYear}-${currentMonth}`;
+            const faltasKey = `${mat}_${semana}_faltas`;
+            faltasEmEdicao = JSON.parse(JSON.stringify(allData[monthKey][faltasKey] || []));
+
+            document.getElementById('dataFalta').value = '';
+            document.getElementById('tipoAtestado').value = 'com';
+            renderizarListaFaltas();
+            document.getElementById('modalFaltas').classList.add('active');
+        }
+
+        function fecharModalFaltas() {
+            document.getElementById('modalFaltas').classList.remove('active');
+            faltasEmEdicao = [];
+            matEmEdicao = '';
+            semanaEmEdicao = '';
+        }
+
+        function adicionarFalta() {
+            const data = document.getElementById('dataFalta').value;
+            const atestado = document.getElementById('tipoAtestado').value;
+
+            if (!data) {
+                alert('⚠️ Por favor, selecione uma data');
+                return;
+            }
+
+            // Verificar se a data já foi adicionada
+            if (faltasEmEdicao.some(f => f.data === data)) {
+                alert('⚠️ Esta data já foi adicionada');
+                return;
+            }
+
+            const dataObj = new Date(data + 'T00:00:00');
+            faltasEmEdicao.push({
+                data: data,
+                atestado: atestado,
+                dataFormatada: dataObj.toLocaleDateString('pt-BR')
+            });
+
+            document.getElementById('dataFalta').value = '';
+            renderizarListaFaltas();
+        }
+
+        function removerFalta(index) {
+            faltasEmEdicao.splice(index, 1);
+            renderizarListaFaltas();
+        }
+
+        function renderizarListaFaltas() {
+            const listaDiv = document.getElementById('listaFaltas');
+
+            if (faltasEmEdicao.length === 0) {
+                listaDiv.innerHTML = '<p style="color: #999; font-size: 13px;">Nenhuma falta registrada</p>';
+                return;
+            }
+
+            let html = '';
+            faltasEmEdicao.forEach((falta, index) => {
+                const badgeClass = falta.atestado === 'com' ? 'badge-com' : 'badge-sem';
+                const atestadoLabel = falta.atestado === 'com' ? '✅ COM' : '❌ SEM';
+                html += `
+                    <div class="falta-item">
+                        <div class="falta-info">
+                            <div class="falta-data">${falta.dataFormatada}</div>
+                            <div class="falta-atestado">
+                                <span class="${badgeClass}">${atestadoLabel} Atestado</span>
+                            </div>
+                        </div>
+                        <button class="btn-remove-falta" onclick="removerFalta(${index})">❌ Remover</button>
+                    </div>
+                `;
+            });
+
+            listaDiv.innerHTML = html;
+        }
+
+        function salvarFaltas() {
+            const monthKey = `${currentYear}-${currentMonth}`;
+            if (!allData[monthKey]) allData[monthKey] = {};
+
+            const faltasKey = `${matEmEdicao}_${semanaEmEdicao}_faltas`;
+            const valorKey = `${matEmEdicao}_${semanaEmEdicao}_valor`;
+
+            allData[monthKey][faltasKey] = faltasEmEdicao;
+
+            // Calcular novo valor
+            const colab = colaboradores.find(c => c.mat === matEmEdicao);
+            if (colab) {
+                const vtCalculado = colab.vtDia * (6 - faltasEmEdicao.length);
+                allData[monthKey][valorKey] = vtCalculado;
+            }
+
+            localStorage.setItem('vtData', JSON.stringify(allData));
+            fecharModalFaltas();
+            renderTable();
+
+            document.getElementById('successMsg').textContent = '✅ Faltas atualizadas com sucesso!';
+            document.getElementById('successMsg').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('successMsg').style.display = 'none';
+            }, 3000);
+        }
+
         // Ao carregar a página, verificar se o usuário já está logado
         window.addEventListener('load', function() {
             const usuario = localStorage.getItem('usuario');
@@ -2243,5 +2906,40 @@
             }
         });
     </script>
+
+    <!-- MODAL FALTAS -->
+    <div id="modalFaltas" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span>📅 Gerenciar Faltas</span>
+                <button class="modal-close" onclick="fecharModalFaltas()">✕</button>
+            </div>
+
+            <div class="modal-form">
+                <div class="form-group">
+                    <label>📅 Data da Falta:</label>
+                    <input type="date" id="dataFalta" style="width: 100%; padding: 10px; border: 1px solid #d4dce8; border-radius: 8px;">
+                </div>
+                <div class="form-group">
+                    <label>📄 Tipo de Atestado:</label>
+                    <select id="tipoAtestado" style="width: 100%; padding: 10px; border: 1px solid #d4dce8; border-radius: 8px;">
+                        <option value="com">✅ COM Atestado</option>
+                        <option value="sem">❌ SEM Atestado</option>
+                    </select>
+                </div>
+                <button class="btn-add-falta" onclick="adicionarFalta()">➕ Adicionar Falta</button>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <strong style="color: #2c3e50; font-size: 14px;">Faltas Registradas:</strong>
+                <div id="listaFaltas" style="margin-top: 10px;"></div>
+            </div>
+
+            <div class="modal-actions">
+                <button class="btn-add-falta" onclick="salvarFaltas()">💾 Salvar Faltas</button>
+                <button class="btn-fechar-modal" onclick="fecharModalFaltas()">Fechar</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
