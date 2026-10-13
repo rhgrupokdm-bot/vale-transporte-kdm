@@ -932,6 +932,90 @@
             box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
         }
     </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js">
+        function gerarRecibosEmPDF() {
+            const { jsPDF } = window.jspdf;
+            const recibos = {};
+            
+            colaboradores.forEach(colab => {
+                if (!colab.ativo) return;
+                recibos[colab.mat] = {
+                    nome: colab.nome,
+                    mat: colab.mat,
+                    empresa: colab.empresa,
+                    diasPagos: [],
+                    diasDescontados: []
+                };
+            });
+            
+            Object.keys(allData).forEach(mes => {
+                Object.keys(allData[mes]).forEach(key => {
+                    const match = key.match(/^(\d+)_(\d+)_(faltas|valor)$/);
+                    if (!match) return;
+                    const [_, mat, semana, tipo] = match;
+                    const colab = colaboradores.find(c => c.mat === mat);
+                    if (!colab || !recibos[mat]) return;
+                    
+                    if (tipo === 'faltas') {
+                        const faltas = allData[mes][key];
+                        if (faltas) recibos[mat].diasDescontados.push(`Semana ${semana}: ${faltas} dias`);
+                    } else if (tipo === 'valor') {
+                        const valor = parseFloat(allData[mes][key] || 0);
+                        if (valor > 0) recibos[mat].diasPagos.push(`Semana ${semana}: R$ ${valor.toFixed(2)}`);
+                    }
+                });
+            });
+            
+            let gerados = 0;
+            Object.values(recibos).forEach((recibo) => {
+                const doc = new jsPDF();
+                doc.setFontSize(16);
+                doc.text('RECIBO DE VALE TRANSPORTE', 105, 15, { align: 'center' });
+                doc.setFontSize(10);
+                doc.text('Grupo KDM', 105, 25, { align: 'center' });
+                doc.setFontSize(11);
+                doc.text(`Colaborador: ${recibo.nome}`, 20, 40);
+                doc.text(`Matrícula: ${recibo.mat}`, 20, 50);
+                doc.text(`Empresa: ${recibo.empresa}`, 20, 60);
+                
+                doc.setFontSize(12);
+                doc.text('DIAS PAGOS:', 20, 75);
+                doc.setFontSize(10);
+                let yPos = 85;
+                if (recibo.diasPagos.length > 0) {
+                    recibo.diasPagos.forEach(dia => {
+                        doc.text(dia, 25, yPos);
+                        yPos += 8;
+                    });
+                } else {
+                    doc.text('Nenhum dia pago registrado', 25, yPos);
+                }
+                
+                doc.setFontSize(12);
+                yPos += 5;
+                doc.text('DIAS DESCONTADOS:', 20, yPos);
+                doc.setFontSize(10);
+                yPos += 10;
+                if (recibo.diasDescontados.length > 0) {
+                    recibo.diasDescontados.forEach(dia => {
+                        doc.text(dia, 25, yPos);
+                        yPos += 8;
+                    });
+                } else {
+                    doc.text('Nenhum dia descontado', 25, yPos);
+                }
+                
+                doc.setFontSize(9);
+                doc.text('Data: ' + new Date().toLocaleDateString('pt-BR'), 20, 270);
+                doc.save(`Recibo_${recibo.mat}_${recibo.nome.replace(/\s+/g, '_')}.pdf`);
+                gerados++;
+            });
+            
+            alert(`✅ ${gerados} recibo(s) gerado(s) com sucesso!`);
+        }
+
+</script>
 </head>
 <body>
     <!-- LOGIN SCREEN -->
@@ -1031,6 +1115,7 @@
                 <div class="actions" style="opacity: 0.4; pointer-events: none;">
                     <button class="btn-save" onclick="saveAllWeeks()" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 12px 28px; border-radius: 6px; font-weight: 600; font-size: 15px; cursor: not-allowed; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);">🚀 Lançar VT do Mês</button>
                     <button class="btn-clear" onclick="clearAllWeeks()">🗑️ Limpar Tudo</button>
+                    <button class="btn-pdf" onclick="gerarRecibosEmPDF()" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; border: none; padding: 12px 28px; border-radius: 6px; font-weight: 600; font-size: 15px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(245, 87, 108, 0.3);">📄 Gerar Recibos em PDF</button>
                 </div>
             </div>
 
@@ -2242,6 +2327,88 @@
                 showApp();
             }
         });
-    </script>
+    
+        function gerarRecibosEmPDF() {
+            const { jsPDF } = window.jspdf;
+            const recibos = {};
+            
+            colaboradores.forEach(colab => {
+                if (!colab.ativo) return;
+                recibos[colab.mat] = {
+                    nome: colab.nome,
+                    mat: colab.mat,
+                    empresa: colab.empresa,
+                    diasPagos: [],
+                    diasDescontados: []
+                };
+            });
+            
+            Object.keys(allData).forEach(mes => {
+                Object.keys(allData[mes]).forEach(key => {
+                    const match = key.match(/^(\d+)_(\d+)_(faltas|valor)$/);
+                    if (!match) return;
+                    const [_, mat, semana, tipo] = match;
+                    const colab = colaboradores.find(c => c.mat === mat);
+                    if (!colab || !recibos[mat]) return;
+                    
+                    if (tipo === 'faltas') {
+                        const faltas = allData[mes][key];
+                        if (faltas) recibos[mat].diasDescontados.push(`Semana ${semana}: ${faltas} dias`);
+                    } else if (tipo === 'valor') {
+                        const valor = parseFloat(allData[mes][key] || 0);
+                        if (valor > 0) recibos[mat].diasPagos.push(`Semana ${semana}: R$ ${valor.toFixed(2)}`);
+                    }
+                });
+            });
+            
+            let gerados = 0;
+            Object.values(recibos).forEach((recibo) => {
+                const doc = new jsPDF();
+                doc.setFontSize(16);
+                doc.text('RECIBO DE VALE TRANSPORTE', 105, 15, { align: 'center' });
+                doc.setFontSize(10);
+                doc.text('Grupo KDM', 105, 25, { align: 'center' });
+                doc.setFontSize(11);
+                doc.text(`Colaborador: ${recibo.nome}`, 20, 40);
+                doc.text(`Matrícula: ${recibo.mat}`, 20, 50);
+                doc.text(`Empresa: ${recibo.empresa}`, 20, 60);
+                
+                doc.setFontSize(12);
+                doc.text('DIAS PAGOS:', 20, 75);
+                doc.setFontSize(10);
+                let yPos = 85;
+                if (recibo.diasPagos.length > 0) {
+                    recibo.diasPagos.forEach(dia => {
+                        doc.text(dia, 25, yPos);
+                        yPos += 8;
+                    });
+                } else {
+                    doc.text('Nenhum dia pago registrado', 25, yPos);
+                }
+                
+                doc.setFontSize(12);
+                yPos += 5;
+                doc.text('DIAS DESCONTADOS:', 20, yPos);
+                doc.setFontSize(10);
+                yPos += 10;
+                if (recibo.diasDescontados.length > 0) {
+                    recibo.diasDescontados.forEach(dia => {
+                        doc.text(dia, 25, yPos);
+                        yPos += 8;
+                    });
+                } else {
+                    doc.text('Nenhum dia descontado', 25, yPos);
+                }
+                
+                doc.setFontSize(9);
+                doc.text('Data: ' + new Date().toLocaleDateString('pt-BR'), 20, 270);
+                doc.save(`Recibo_${recibo.mat}_${recibo.nome.replace(/\s+/g, '_')}.pdf`);
+                gerados++;
+            });
+            
+            alert(`✅ ${gerados} recibo(s) gerado(s) com sucesso!`);
+        }
+
+</script>
 </body>
 </html>
