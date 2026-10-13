@@ -13,7 +13,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-            background: #f8f9fc;
+            background: linear-gradient(135deg, #fff4f8 0%, #f0e6ff 100%);
             min-height: 100vh;
             padding: 0;
             color: #2c3e50;
@@ -25,17 +25,17 @@
             align-items: center;
             min-height: 100vh;
             padding: 20px;
-            background: linear-gradient(135deg, #f8f9fc 0%, #e8f0f7 100%);
+            background: linear-gradient(135deg, #fff4f8 0%, #ffe6f0 100%);
         }
 
         .login-box {
             background: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(212, 165, 255, 0.15);
             padding: 48px;
             max-width: 420px;
             width: 100%;
-            border: none;
+            border: 2px solid #f0d9f0;
         }
 
         .login-box h1 {
@@ -70,10 +70,10 @@
         .form-group input {
             width: 100%;
             padding: 12px 16px;
-            border: 1px solid #d4dce8;
-            border-radius: 10px;
+            border: 1.5px solid #e5c8e5;
+            border-radius: 12px;
             font-size: 15px;
-            background: #fbfcfd;
+            background: #fff9fd;
             color: #2c3e50;
             transition: all 0.2s ease;
             font-family: inherit;
@@ -81,31 +81,31 @@
 
         .form-group input:focus {
             outline: none;
-            border-color: #5b7cfa;
-            box-shadow: 0 0 0 3px rgba(91, 124, 250, 0.15);
-            background: white;
+            border-color: #b3deff;
+            box-shadow: 0 0 0 3px rgba(179, 222, 255, 0.2);
+            background: #f8f5ff;
         }
 
         .btn-login {
             width: 100%;
             padding: 14px;
-            background: linear-gradient(135deg, #5b7cfa 0%, #748ffc 100%);
+            background: linear-gradient(135deg, #b3deff 0%, #d4a5ff 100%);
             color: white;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
             margin-top: 10px;
-            box-shadow: 0 4px 15px rgba(91, 124, 250, 0.3);
+            box-shadow: 0 4px 15px rgba(179, 222, 255, 0.3);
             transition: all 0.3s ease;
             letter-spacing: 0.3px;
         }
 
         .btn-login:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(91, 124, 250, 0.5);
-            background: linear-gradient(135deg, #4c6ef5 0%, #6b7dfc 100%);
+            box-shadow: 0 8px 25px rgba(212, 165, 255, 0.4);
+            background: linear-gradient(135deg, #90ceff 0%, #c07aff 100%);
         }
 
         .error {
@@ -119,16 +119,16 @@
         }
 
         .demo-box {
-            background: #f0f8ff;
-            border-left: 4px solid #667eea;
+            background: #f0e6ff;
+            border-left: 4px solid #d4a5ff;
             padding: 15px;
             margin-top: 20px;
-            border-radius: 5px;
+            border-radius: 10px;
             font-size: 12px;
         }
 
         .demo-box strong {
-            color: #667eea;
+            color: #b897d1;
         }
 
         /* APP */
@@ -141,7 +141,7 @@
         .navbar {
             background: #ffffff;
             padding: 20px 32px;
-            border-bottom: 1px solid #e5e9f2;
+            border-bottom: 2px solid #f0d9f0;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -150,6 +150,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 2px 8px rgba(212, 165, 255, 0.08);
         }
 
         .navbar h1 {
@@ -181,7 +182,7 @@
 
         .month-selector select {
             padding: 10px 14px;
-            border: 1px solid #d4dce8;
+            border: 1.5px solid #e5c8e5;
             border-radius: 10px;
             font-size: 14px;
             font-weight: 500;
@@ -192,8 +193,8 @@
 
         .month-selector select:focus {
             outline: none;
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+            border-color: #b3deff;
+            box-shadow: 0 0 0 3px rgba(179, 222, 255, 0.1);
         }
 
         .month-nav {
@@ -203,20 +204,20 @@
 
         .month-btn {
             background: #ffffff;
-            border: 1px solid #d4dce8;
+            border: 1.5px solid #e5c8e5;
             padding: 9px 14px;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
             font-weight: 500;
             transition: all 0.2s ease;
             font-size: 13px;
-            color: #6b7280;
+            color: #8b6b9e;
         }
 
         .month-btn:hover {
-            background: #f8f9fc;
-            border-color: #3b82f6;
-            color: #3b82f6;
+            background: #f8f5ff;
+            border-color: #b3deff;
+            color: #7fc8ff;
         }
 
         .navbar-right {
@@ -226,30 +227,30 @@
         }
 
         .user-badge {
-            background: #f0f5ff;
+            background: #f0e6ff;
             padding: 8px 16px;
             border-radius: 10px;
             font-size: 13px;
             font-weight: 600;
-            color: #3b82f6;
+            color: #b897d1;
         }
 
         .btn-logout {
             background: transparent;
-            border: 1px solid #d4dce8;
+            border: 1.5px solid #e5c8e5;
             padding: 10px 18px;
             border-radius: 10px;
             cursor: pointer;
             font-weight: 500;
             font-size: 14px;
-            color: #6b7280;
+            color: #8b6b9e;
             transition: all 0.2s ease;
         }
 
         .btn-logout:hover {
-            border-color: #3b82f6;
-            background: #f0f5ff;
-            color: #3b82f6;
+            border-color: #b3deff;
+            background: #f0e6ff;
+            color: #7fc8ff;
         }
 
         .container {
@@ -270,47 +271,48 @@
         .week-btn {
             padding: 10px 18px;
             background: #ffffff;
-            border: 1px solid #d4dce8;
+            border: 1.5px solid #e5c8e5;
             border-radius: 10px;
             cursor: pointer;
             font-weight: 500;
             transition: all 0.2s ease;
             font-size: 14px;
-            color: #6b7280;
+            color: #8b6b9e;
         }
 
         .week-btn:hover {
-            border-color: #3b82f6;
-            background: #f0f5ff;
-            color: #3b82f6;
+            border-color: #b3deff;
+            background: #f8f5ff;
+            color: #7fc8ff;
         }
 
         .week-btn.active {
-            background: #3b82f6;
+            background: linear-gradient(135deg, #b3deff 0%, #d4a5ff 100%);
             color: white;
-            border-color: #3b82f6;
-            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+            border-color: #a8d8ff;
+            box-shadow: 0 4px 12px rgba(179, 222, 255, 0.3);
         }
 
         .info-banner {
-            background: #f0f5ff;
-            border-left: 3px solid #3b82f6;
+            background: #f0e6ff;
+            border-left: 4px solid #d4a5ff;
             padding: 14px 18px;
             margin-bottom: 24px;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 14px;
-            color: #1e40af;
+            color: #8b5fa8;
             font-weight: 500;
             letter-spacing: 0.2px;
-            box-shadow: none;
+            box-shadow: 0 2px 8px rgba(212, 165, 255, 0.1);
         }
 
         .table-wrapper {
             overflow-x: auto;
             margin-bottom: 30px;
             background: #ffffff;
-            border-radius: 12px;
-            border: 1px solid #e5e9f2;
+            border-radius: 14px;
+            border: 1.5px solid #f0d9f0;
+            box-shadow: 0 2px 8px rgba(212, 165, 255, 0.08);
         }
 
         table {
@@ -320,18 +322,18 @@
         }
 
         th {
-            background: #f8f9fc;
+            background: #faf8fc;
             padding: 14px 16px;
             text-align: left;
             font-weight: 600;
             color: #2c3e50;
-            border-bottom: 1px solid #e5e9f2;
+            border-bottom: 1.5px solid #f0d9f0;
             font-size: 13px;
         }
 
         td {
             padding: 14px 16px;
-            border-bottom: 1px solid #f0f4f8;
+            border-bottom: 1px solid #f8f4fa;
         }
 
         tbody tr {
@@ -339,7 +341,7 @@
         }
 
         tbody tr:hover {
-            background: #f8fafb;
+            background: #fef8ff;
         }
 
         tbody tr td:first-child {
@@ -353,7 +355,7 @@
         td input {
             width: 100%;
             padding: 8px 12px;
-            border: 1px solid #d4dce8;
+            border: 1.5px solid #e5c8e5;
             border-radius: 8px;
             font-size: 13px;
             text-align: center;
@@ -365,15 +367,15 @@
 
         td input:focus {
             outline: none;
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-            background: #f0f5ff;
+            border-color: #b3deff;
+            box-shadow: 0 0 0 3px rgba(179, 222, 255, 0.15);
+            background: #f8f5ff;
         }
 
         td select {
             width: 100%;
             padding: 8px 12px;
-            border: 1px solid #d4dce8;
+            border: 1.5px solid #e5c8e5;
             border-radius: 8px;
             font-size: 13px;
             text-align: center;
@@ -385,8 +387,8 @@
 
         td select:focus {
             outline: none;
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+            border-color: #b3deff;
+            box-shadow: 0 0 0 3px rgba(179, 222, 255, 0.15);
         }
 
         td.total {
@@ -408,7 +410,7 @@
         }
 
         .btn-save {
-            background: #3b82f6;
+            background: linear-gradient(135deg, #b3deff 0%, #d4a5ff 100%);
             color: white;
             border: none;
             padding: 11px 28px;
@@ -416,14 +418,15 @@
             font-weight: 600;
             cursor: pointer;
             font-size: 14px;
-            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+            box-shadow: 0 4px 12px rgba(179, 222, 255, 0.25);
             transition: all 0.2s ease;
             letter-spacing: 0.3px;
         }
 
         .btn-save:hover {
-            background: #2563eb;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            background: linear-gradient(135deg, #90ceff 0%, #c07aff 100%);
+            box-shadow: 0 6px 16px rgba(212, 165, 255, 0.35);
+            transform: translateY(-1px);
         }
 
         .btn-save:active {
@@ -432,25 +435,25 @@
 
         .btn-clear {
             background: transparent;
-            border: 1px solid #d4dce8;
+            border: 1.5px solid #e5c8e5;
             padding: 11px 28px;
             border-radius: 10px;
             font-weight: 500;
             cursor: pointer;
-            color: #6b7280;
+            color: #8b6b9e;
             transition: all 0.2s ease;
             font-size: 14px;
             letter-spacing: 0.3px;
         }
 
         .btn-clear:hover {
-            background: #f8f9fc;
-            border-color: #bfc4d4;
-            color: #2c3e50;
+            background: #f8f5ff;
+            border-color: #d4a5ff;
+            color: #7fc8ff;
         }
 
         .btn-bulk {
-            background: #3b82f6;
+            background: linear-gradient(135deg, #b3deff 0%, #d4a5ff 100%);
             color: white;
             border: none;
             padding: 11px 24px;
@@ -459,12 +462,13 @@
             cursor: pointer;
             font-size: 14px;
             transition: all 0.2s ease;
-            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+            box-shadow: 0 4px 12px rgba(179, 222, 255, 0.25);
         }
 
         .btn-bulk:hover {
-            background: #2563eb;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            background: linear-gradient(135deg, #90ceff 0%, #c07aff 100%);
+            box-shadow: 0 6px 16px rgba(212, 165, 255, 0.35);
+            transform: translateY(-1px);
         }
 
         .modal {
@@ -488,11 +492,12 @@
             background-color: white;
             margin: 8% auto;
             padding: 32px;
-            border-radius: 14px;
+            border-radius: 16px;
             width: 90%;
             max-width: 600px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 10px 30px rgba(212, 165, 255, 0.15);
             animation: slideUp 0.3s ease;
+            border: 1.5px solid #f0d9f0;
         }
 
         @keyframes slideUp {
@@ -526,7 +531,7 @@
         .modal-input {
             width: 100%;
             padding: 10px 12px;
-            border: 1px solid #d4dce8;
+            border: 1.5px solid #e5c8e5;
             border-radius: 8px;
             font-size: 14px;
             box-sizing: border-box;
@@ -536,9 +541,9 @@
 
         .modal-input:focus {
             outline: none;
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-            background: #f0f5ff;
+            border-color: #b3deff;
+            box-shadow: 0 0 0 3px rgba(179, 222, 255, 0.15);
+            background: #f8f5ff;
         }
 
         .modal-footer {
@@ -558,26 +563,26 @@
         }
 
         .modal-btn-apply {
-            background: #3b82f6;
+            background: linear-gradient(135deg, #b3deff 0%, #d4a5ff 100%);
             color: white;
-            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+            box-shadow: 0 4px 12px rgba(179, 222, 255, 0.25);
         }
 
         .modal-btn-apply:hover {
-            background: #2563eb;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            background: linear-gradient(135deg, #90ceff 0%, #c07aff 100%);
+            box-shadow: 0 6px 16px rgba(212, 165, 255, 0.35);
         }
 
         .modal-btn-cancel {
             background: transparent;
-            color: #6b7280;
-            border: 1px solid #d4dce8;
+            color: #8b6b9e;
+            border: 1.5px solid #e5c8e5;
         }
 
         .modal-btn-cancel:hover {
-            background: #f8f9fc;
-            border-color: #bfc4d4;
-            color: #2c3e50;
+            background: #f8f5ff;
+            border-color: #d4a5ff;
+            color: #7fc8ff;
         }
 
         .summary {
@@ -593,47 +598,51 @@
 
         .summary-item {
             text-align: center;
-            background: #ffffff;
+            background: linear-gradient(135deg, #ffffff 0%, #faf8fc 100%);
             padding: 28px 24px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-            transition: all 0.2s ease;
-            border: 1px solid #e5e9f2;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(212, 165, 255, 0.12);
+            transition: all 0.3s ease;
+            border: 1.5px solid #f0d9f0;
         }
 
         .summary-item:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            border-color: #d4dce8;
+            box-shadow: 0 8px 20px rgba(212, 165, 255, 0.18);
+            border-color: #d4a5ff;
+            transform: translateY(-2px);
         }
 
         .summary-label {
             font-size: 12px;
-            opacity: 0.7;
+            opacity: 0.75;
             margin-bottom: 12px;
             font-weight: 600;
             letter-spacing: 0.5px;
             text-transform: uppercase;
-            color: #6b7280;
+            color: #8b6b9e;
         }
 
         .summary-value {
             font-size: 28px;
             font-weight: 700;
             letter-spacing: -0.5px;
-            color: #3b82f6;
+            background: linear-gradient(135deg, #b3deff, #d4a5ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .success-msg {
             display: none;
-            background: #ecfdf5;
-            color: #065f46;
+            background: #e8f7f3;
+            color: #0f6b56;
             padding: 14px 16px;
-            border-radius: 8px;
+            border-radius: 10px;
             margin-bottom: 24px;
-            border-left: 3px solid #10b981;
+            border-left: 4px solid #0fa080;
             font-weight: 500;
             letter-spacing: 0.2px;
-            box-shadow: 0 2px 6px rgba(16, 185, 129, 0.1);
+            box-shadow: 0 4px 12px rgba(15, 160, 128, 0.15);
             animation: slideDown 0.3s ease;
         }
 
@@ -646,10 +655,10 @@
             margin-top: 48px;
             padding-top: 24px;
             padding-bottom: 24px;
-            border-top: 1px solid #e5e9f2;
+            border-top: 1.5px solid #f0d9f0;
             text-align: center;
             font-size: 12px;
-            color: #9ca3af;
+            color: #a89ab3;
             letter-spacing: 0.2px;
         }
 
@@ -658,7 +667,7 @@
             display: flex;
             gap: 12px;
             margin-bottom: 32px;
-            border-bottom: 1px solid #e5e9f2;
+            border-bottom: 1.5px solid #f0d9f0;
             padding-bottom: 0;
             flex-wrap: wrap;
         }
@@ -670,22 +679,22 @@
             cursor: pointer;
             font-weight: 500;
             font-size: 14px;
-            color: #6b7280;
-            border-bottom: 2px solid transparent;
+            color: #8b6b9e;
+            border-bottom: 3px solid transparent;
             transition: all 0.2s ease;
             position: relative;
             letter-spacing: 0.3px;
         }
 
         .tab-btn.active {
-            color: #3b82f6;
-            border-bottom-color: #3b82f6;
+            color: #7fc8ff;
+            border-bottom-color: #b3deff;
             background: transparent;
             border-radius: 0;
         }
 
         .tab-btn:hover {
-            color: #3b82f6;
+            color: #d4a5ff;
             background: transparent;
         }
 
@@ -699,12 +708,12 @@
 
         /* CONFIGURAÇÕES */
         .config-section {
-            background: #ffffff;
+            background: linear-gradient(135deg, #ffffff 0%, #faf8fc 100%);
             padding: 28px 24px;
-            border-radius: 12px;
+            border-radius: 14px;
             margin-bottom: 24px;
-            border: 1px solid #e5e9f2;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            border: 1.5px solid #f0d9f0;
+            box-shadow: 0 4px 12px rgba(212, 165, 255, 0.1);
         }
 
         .config-section h3 {
@@ -721,29 +730,29 @@
             background: #ffffff;
             border-radius: 12px;
             overflow: hidden;
-            border: 1px solid #e5e9f2;
+            border: 1.5px solid #f0d9f0;
         }
 
         .config-table th {
-            background: #f8f9fc;
+            background: #faf8fc;
             color: #2c3e50;
             padding: 14px 16px;
             text-align: left;
             font-weight: 600;
             border: none;
-            border-bottom: 1px solid #e5e9f2;
+            border-bottom: 1.5px solid #f0d9f0;
             letter-spacing: 0.3px;
             font-size: 13px;
         }
 
         .config-table td {
             padding: 14px 16px;
-            border-bottom: 1px solid #f0f4f8;
+            border-bottom: 1px solid #f8f4fa;
             color: #2c3e50;
         }
 
         .config-table tbody tr:hover {
-            background: #f8f9fc;
+            background: #fef8ff;
             transition: background 0.2s ease;
         }
 
@@ -755,7 +764,7 @@
         .config-table select {
             width: 100%;
             padding: 10px 12px;
-            border: 1px solid #d4dce8;
+            border: 1.5px solid #e5c8e5;
             border-radius: 8px;
             font-size: 13px;
             background: #ffffff;
@@ -768,13 +777,13 @@
         .config-table input:focus,
         .config-table select:focus {
             outline: none;
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-            background: #f0f5ff;
+            border-color: #b3deff;
+            box-shadow: 0 0 0 3px rgba(179, 222, 255, 0.15);
+            background: #f8f5ff;
         }
 
         .btn-save-config {
-            background: #3b82f6;
+            background: linear-gradient(135deg, #b3deff 0%, #d4a5ff 100%);
             color: white;
             border: none;
             padding: 11px 28px;
@@ -783,13 +792,14 @@
             cursor: pointer;
             font-size: 14px;
             transition: all 0.2s ease;
-            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+            box-shadow: 0 4px 12px rgba(179, 222, 255, 0.25);
             letter-spacing: 0.3px;
         }
 
         .btn-save-config:hover {
-            background: #2563eb;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            background: linear-gradient(135deg, #90ceff 0%, #c07aff 100%);
+            box-shadow: 0 6px 16px rgba(212, 165, 255, 0.35);
+            transform: translateY(-1px);
         }
 
         .btn-save-config:active {
@@ -797,7 +807,7 @@
         }
 
         .btn-delete {
-            background: #ef4444;
+            background: linear-gradient(135deg, #ff9db5 0%, #f97499 100%);
             color: white;
             border: none;
             padding: 8px 14px;
@@ -806,12 +816,13 @@
             font-weight: 600;
             font-size: 12px;
             transition: all 0.2s ease;
-            box-shadow: 0 2px 6px rgba(239, 68, 68, 0.15);
+            box-shadow: 0 2px 8px rgba(255, 157, 181, 0.25);
         }
 
         .btn-delete:hover {
-            background: #dc2626;
-            box-shadow: 0 2px 8px rgba(239, 68, 68, 0.25);
+            background: linear-gradient(135deg, #ff7a99 0%, #f85477 100%);
+            box-shadow: 0 4px 12px rgba(248, 84, 119, 0.3);
+            transform: translateY(-1px);
         }
 
         .btn-delete:active {
@@ -885,24 +896,24 @@
 
         /* Refined modern design tweaks */
         .error {
-            background: #fef2f2;
-            color: #991b1b;
-            border-left-color: #ef4444;
-            box-shadow: 0 2px 6px rgba(239, 68, 68, 0.1);
+            background: #ffe6e6;
+            color: #a81e1e;
+            border-left-color: #ff7a7a;
+            box-shadow: 0 4px 12px rgba(255, 122, 122, 0.15);
         }
 
         .demo-box {
-            background: #f0f5ff;
-            border-left: 3px solid #3b82f6;
+            background: #f0e6ff;
+            border-left: 4px solid #d4a5ff;
             padding: 14px 16px;
             margin-top: 20px;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 12px;
-            color: #1e40af;
+            color: #8b5fa8;
         }
 
         .demo-box strong {
-            color: #3b82f6;
+            color: #b897d1;
         }
 
         .form-group label {
@@ -912,462 +923,26 @@
         }
 
         .form-group input {
-            border-color: #d4dce8;
-            background: #ffffff;
+            border-color: #e5c8e5;
+            background: #fff9fd;
             color: #2c3e50;
         }
 
         .form-group input:focus {
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+            border-color: #b3deff;
+            box-shadow: 0 0 0 3px rgba(179, 222, 255, 0.15);
         }
 
         .btn-login {
-            background: #3b82f6;
-            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+            background: linear-gradient(135deg, #b3deff 0%, #d4a5ff 100%);
+            box-shadow: 0 4px 15px rgba(179, 222, 255, 0.3);
         }
 
         .btn-login:hover {
-            background: #2563eb;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            background: linear-gradient(135deg, #90ceff 0%, #c07aff 100%);
+            box-shadow: 0 8px 25px rgba(212, 165, 255, 0.4);
         }
-    
-        .modal-faltas {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.7);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .modal-faltas.show {
-            display: flex;
-        }
-        
-        .modal-content-faltas {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 500px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-        }
-        
-        .falta-item {
-            background: #f5f5f5;
-            padding: 12px;
-            border-radius: 6px;
-            margin: 10px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-left: 4px solid #667eea;
-        }
-        
-        .falta-info {
-            flex: 1;
-        }
-        
-        .falta-data {
-            font-weight: 600;
-            color: #333;
-        }
-        
-        .falta-atestado {
-            font-size: 12px;
-            color: #666;
-            margin-top: 4px;
-        }
-        
-        .atestado-badge {
-            display: inline-block;
-            padding: 3px 10px;
-            border-radius: 4px;
-            font-size: 11px;
-            font-weight: 600;
-            margin-right: 5px;
-        }
-        
-        .com-atestado {
-            background: #d4edda;
-            color: #155724;
-        }
-        
-        .sem-atestado {
-            background: #f8d7da;
-            color: #721c24;
-        }
-
     </style>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js">
-        function gerarRecibosEmPDF() {
-            const { jsPDF } = window.jspdf;
-            const recibos = {};
-            
-            colaboradores.forEach(colab => {
-                if (!colab.ativo) return;
-                recibos[colab.mat] = {
-                    nome: colab.nome,
-                    mat: colab.mat,
-                    empresa: colab.empresa,
-                    diasPagos: [],
-                    diasDescontados: []
-                };
-            });
-            
-            Object.keys(allData).forEach(mes => {
-                Object.keys(allData[mes]).forEach(key => {
-                    const match = key.match(/^(\d+)_(\d+)_(faltas|valor)$/);
-                    if (!match) return;
-                    const [_, mat, semana, tipo] = match;
-                    const colab = colaboradores.find(c => c.mat === mat);
-                    if (!colab || !recibos[mat]) return;
-                    
-                    if (tipo === 'faltas') {
-                        const faltas = allData[mes][key];
-                        if (faltas) recibos[mat].diasDescontados.push(`Semana ${semana}: ${faltas} dias`);
-                    } else if (tipo === 'valor') {
-                        const valor = parseFloat(allData[mes][key] || 0);
-                        if (valor > 0) recibos[mat].diasPagos.push(`Semana ${semana}: R$ ${valor.toFixed(2)}`);
-                    }
-                });
-            });
-            
-            let gerados = 0;
-            Object.values(recibos).forEach((recibo) => {
-                const doc = new jsPDF();
-                doc.setFontSize(16);
-                doc.text('RECIBO DE VALE TRANSPORTE', 105, 15, { align: 'center' });
-                doc.setFontSize(10);
-                doc.text('Grupo KDM', 105, 25, { align: 'center' });
-                doc.setFontSize(11);
-                doc.text(`Colaborador: ${recibo.nome}`, 20, 40);
-                doc.text(`Matrícula: ${recibo.mat}`, 20, 50);
-                doc.text(`Empresa: ${recibo.empresa}`, 20, 60);
-                
-                doc.setFontSize(12);
-                doc.text('DIAS PAGOS:', 20, 75);
-                doc.setFontSize(10);
-                let yPos = 85;
-                if (recibo.diasPagos.length > 0) {
-                    recibo.diasPagos.forEach(dia => {
-                        doc.text(dia, 25, yPos);
-                        yPos += 8;
-                    });
-                } else {
-                    doc.text('Nenhum dia pago registrado', 25, yPos);
-                }
-                
-                doc.setFontSize(12);
-                yPos += 5;
-                doc.text('DIAS DESCONTADOS:', 20, yPos);
-                doc.setFontSize(10);
-                yPos += 10;
-                if (recibo.diasDescontados.length > 0) {
-                    recibo.diasDescontados.forEach(dia => {
-                        doc.text(dia, 25, yPos);
-                        yPos += 8;
-                    });
-                } else {
-                    doc.text('Nenhum dia descontado', 25, yPos);
-                }
-                
-                doc.setFontSize(9);
-                doc.text('Data: ' + new Date().toLocaleDateString('pt-BR'), 20, 270);
-                doc.save(`Recibo_${recibo.mat}_${recibo.nome.replace(/\s+/g, '_')}.pdf`);
-                gerados++;
-            });
-            
-            alert(`✅ ${gerados} recibo(s) gerado(s) com sucesso!`);
-        }
-
-
-        // ===== SISTEMA DE SINCRONIZAÇÃO =====
-        let historicoSync = JSON.parse(localStorage.getItem('historicoSync') || '[]');
-        
-        function atualizarStatusSincronizacao() {
-            const ultimaSync = localStorage.getItem('ultimaSincronizacao') || 'Nunca';
-            document.getElementById('ultimaSinc').textContent = ultimaSync;
-            
-            const tamanhoData = new Blob([JSON.stringify(allData)]).size;
-            document.getElementById('tamanhoDados').textContent = (tamanhoData / 1024).toFixed(2) + ' KB';
-            
-            const resumo = `
-                <strong>Colaboradores:</strong> ${colaboradores.length}<br>
-                <strong>Meses registrados:</strong> ${Object.keys(allData).length}<br>
-                <strong>Total de lançamentos:</strong> ${Object.keys(allData).reduce((acc, mes) => acc + Object.keys(allData[mes]).length, 0)}
-            `;
-            document.getElementById('resumoDados').innerHTML = resumo;
-            
-            atualizarHistorico();
-        }
-
-        function exportarDados() {
-            const dados = {
-                timestamp: new Date().toISOString(),
-                versao: '1.0',
-                colaboradores: colaboradores,
-                dados: allData,
-                backup: JSON.parse(localStorage.getItem('backup') || '{}')
-            };
-            
-            const dataStr = JSON.stringify(dados, null, 2);
-            const dataBlob = new Blob([dataStr], { type: 'application/json' });
-            const url = URL.createObjectURL(dataBlob);
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = `backup_vt_${new Date().toISOString().split('T')[0]}.json`;
-            link.click();
-            
-            registrarSincronizacao('Exportação de dados realizada');
-            alert('✅ Dados exportados com sucesso!');
-        }
-
-        function importarDados() {
-            document.getElementById('fileInput').click();
-        }
-
-        function processarImportacao(event) {
-            const file = event.target.files[0];
-            if (!file) return;
-            
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                try {
-                    const dados = JSON.parse(e.target.result);
-                    
-                    if (confirm('Tem certeza? Isso vai substituir todos os dados locais!')) {
-                        allData = dados.dados || allData;
-                        colaboradores = dados.colaboradores || colaboradores;
-                        localStorage.setItem('allData', JSON.stringify(allData));
-                        localStorage.setItem('colaboradores', JSON.stringify(colaboradores));
-                        
-                        registrarSincronizacao('Importação de dados realizada');
-                        alert('✅ Dados importados com sucesso!');
-                        atualizarStatusSincronizacao();
-                        location.reload();
-                    }
-                } catch (error) {
-                    alert('❌ Erro ao importar: ' + error.message);
-                }
-            };
-            reader.readAsText(file);
-        }
-
-        function fazerBackup() {
-            const backup = {
-                timestamp: new Date().toISOString(),
-                colaboradores: colaboradores,
-                dados: allData
-            };
-            
-            localStorage.setItem('backup', JSON.stringify(backup));
-            registrarSincronizacao('Backup local criado');
-            alert('✅ Backup realizado com sucesso!');
-        }
-
-        function limparDadosLocais() {
-            if (confirm('⚠️ ATENÇÃO! Isso vai apagar TODOS os dados locais! Você tem certeza?')) {
-                if (confirm('Digite SIM para confirmar a exclusão de todos os dados:')) {
-                    localStorage.clear();
-                    sessionStorage.clear();
-                    registrarSincronizacao('Todos os dados foram apagados');
-                    alert('✅ Dados locais limpos!');
-                    location.reload();
-                }
-            }
-        }
-
-        function registrarSincronizacao(acao) {
-            const registro = {
-                timestamp: new Date().toLocaleString('pt-BR'),
-                acao: acao
-            };
-            
-            historicoSync.push(registro);
-            if (historicoSync.length > 20) historicoSync.shift();
-            
-            localStorage.setItem('historicoSync', JSON.stringify(historicoSync));
-            localStorage.setItem('ultimaSincronizacao', new Date().toLocaleString('pt-BR'));
-            
-            atualizarHistorico();
-        }
-
-        function atualizarHistorico() {
-            const historico = JSON.parse(localStorage.getItem('historicoSync') || '[]');
-            let html = '';
-            
-            if (historico.length === 0) {
-                html = '<em>Nenhuma ação registrada</em>';
-            } else {
-                historico.slice().reverse().forEach(reg => {
-                    html += `<div style="padding: 8px; border-bottom: 1px solid #ddd;">
-                        <strong>${reg.timestamp}:</strong> ${reg.acao}
-                    </div>`;
-                });
-            }
-            
-            document.getElementById('historicoSinc').innerHTML = html;
-        }
-
-        // Salvar dados automaticamente quando muda algo
-        function saveToLocalStorage() {
-            localStorage.setItem('allData', JSON.stringify(allData));
-            localStorage.setItem('colaboradores', JSON.stringify(colaboradores));
-            registrarSincronizacao('Auto-save realizado');
-        }
-
-        // Carregar dados do localStorage ao iniciar
-        window.addEventListener('load', function() {
-            const savedData = localStorage.getItem('allData');
-            const savedColabs = localStorage.getItem('colaboradores');
-            
-            if (savedData) allData = JSON.parse(savedData);
-            if (savedColabs) colaboradores = JSON.parse(savedColabs);
-            
-            setTimeout(atualizarStatusSincronizacao, 500);
-        });
-
-
-        // ===== GERENCIAR FALTAS COM DATAS E ATESTADO =====
-        let faltasAtual = [];
-        
-        function abrirModalFaltas(mat, semana, mes) {
-            faltasAtual = [];
-            const key = `${mat}_${semana}_faltas_detalhes`;
-            
-            if (allData[mes] && allData[mes][key]) {
-                faltasAtual = JSON.parse(allData[mes][key]);
-            }
-            
-            document.getElementById('dataMatSemana').value = `${mat}|${semana}|${mes}`;
-            renderizarFaltasModal();
-            document.getElementById('modalFaltas').classList.add('show');
-        }
-        
-        function fecharModalFaltas() {
-            document.getElementById('modalFaltas').classList.remove('show');
-        }
-        
-        function adicionarFalta() {
-            const data = document.getElementById('faltaData').value;
-            const atestado = document.getElementById('faltaAtestado').value;
-            
-            if (!data) {
-                alert('Selecione uma data!');
-                return;
-            }
-            
-            faltasAtual.push({
-                data: data,
-                atestado: atestado,
-                dataFormatada: new Date(data).toLocaleDateString('pt-BR')
-            });
-            
-            document.getElementById('faltaData').value = '';
-            renderizarFaltasModal();
-        }
-        
-        function removerFalta(index) {
-            faltasAtual.splice(index, 1);
-            renderizarFaltasModal();
-        }
-        
-        function renderizarFaltasModal() {
-            let html = '';
-            
-            faltasAtual.forEach((falta, index) => {
-                const badgeClass = falta.atestado === 'com' ? 'com-atestado' : 'sem-atestado';
-                const badgeText = falta.atestado === 'com' ? '✅ COM ATESTADO' : '❌ SEM ATESTADO';
-                
-                html += `
-                    <div class="falta-item">
-                        <div class="falta-info">
-                            <div class="falta-data">${falta.dataFormatada}</div>
-                            <div class="falta-atestado">
-                                <span class="atestado-badge ${badgeClass}">${badgeText}</span>
-                            </div>
-                        </div>
-                        <button onclick="removerFalta(${index})" style="background: #f8d7da; color: #721c24; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: 600;">✕</button>
-                    </div>
-                `;
-            });
-            
-            document.getElementById('listaFaltas').innerHTML = html || '<em style="color: #999;">Nenhuma falta registrada</em>';
-            document.getElementById('totalFaltas').textContent = faltasAtual.length;
-        }
-        
-        function salvarFaltas() {
-            const [mat, semana, mes] = document.getElementById('dataMatSemana').value.split('|');
-            
-            if (!allData[mes]) allData[mes] = {};
-            
-            // Salvar detalhes das faltas
-            const key = `${mat}_${semana}_faltas_detalhes`;
-            allData[mes][key] = JSON.stringify(faltasAtual);
-            
-            // Salvar contagem simples também
-            const keySimples = `${mat}_${semana}_faltas`;
-            allData[mes][keySimples] = faltasAtual.length.toString();
-            
-            saveToLocalStorage();
-            registrarSincronizacao('Faltas atualizadas com datas e atestado');
-            
-            alert(`✅ ${faltasAtual.length} falta(s) salva(s)!`);
-            fecharModalFaltas();
-            
-            // Recarregar tabela se estiver na aba correta
-            if (document.getElementById('tab-lancamento').classList.contains('active')) {
-                renderizarTabelaLancamento();
-            }
-        }
-
-
-        function exibirFaltasResumo(mat, semana, mes) {
-            const keyDetalhes = `${mat}_${semana}_faltas_detalhes`;
-            const keySimples = `${mat}_${semana}_faltas`;
-            
-            if (allData[mes] && allData[mes][keyDetalhes]) {
-                try {
-                    const faltas = JSON.parse(allData[mes][keyDetalhes]);
-                    
-                    if (faltas.length === 0) {
-                        return '<span style="color: #27ae60; font-weight: 600;">✅ Sem faltas</span>';
-                    }
-                    
-                    let html = '<div style="background: #fff3cd; padding: 10px; border-radius: 6px; margin: 5px 0;">';
-                    faltas.forEach(falta => {
-                        const badgeClass = falta.atestado === 'com' ? 'com-atestado' : 'sem-atestado';
-                        const badgeText = falta.atestado === 'com' ? '✅ COM' : '❌ SEM';
-                        
-                        html += `<div style="margin: 5px 0; font-size: 13px;">
-                            📅 ${falta.dataFormatada} 
-                            <span class="atestado-badge ${badgeClass}" style="margin-left: 8px;">${badgeText}</span>
-                        </div>`;
-                    });
-                    html += '</div>';
-                    
-                    return html;
-                } catch (e) {
-                    // Se não conseguir parsear, mostrar número simples
-                }
-            }
-            
-            // Fallback: mostrar número simples
-            const simples = allData[mes] ? (allData[mes][keySimples] || '0') : '0';
-            if (simples === '0') {
-                return '<span style="color: #27ae60; font-weight: 600;">✅ Sem faltas</span>';
-            }
-            return `<span style="color: #e74c3c; font-weight: 600;">${simples} dia(s)</span>`;
-        }
-
-</script>
 </head>
 <body>
     <!-- LOGIN SCREEN -->
@@ -1441,7 +1016,6 @@
                 <button class="tab-btn" onclick="switchTab('mensal')">📈 Resumo Mensal</button>
                 <button class="tab-btn" onclick="switchTab('empresas')">🏢 Empresas</button>
                 <button class="tab-btn" onclick="switchTab('configuracoes')">⚙️ Colaboradores</button>
-                <button class="tab-btn" onclick="switchTab('sincronizacao')">🔄 Sincronização</button>
             </div>
 
             <!-- TAB: LANÇAMENTO -->
@@ -1468,7 +1042,6 @@
                 <div class="actions" style="opacity: 0.4; pointer-events: none;">
                     <button class="btn-save" onclick="saveAllWeeks()" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 12px 28px; border-radius: 6px; font-weight: 600; font-size: 15px; cursor: not-allowed; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);">🚀 Lançar VT do Mês</button>
                     <button class="btn-clear" onclick="clearAllWeeks()">🗑️ Limpar Tudo</button>
-                    <button class="btn-pdf" onclick="gerarRecibosEmPDF()" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; border: none; padding: 12px 28px; border-radius: 6px; font-weight: 600; font-size: 15px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(245, 87, 108, 0.3);">📄 Gerar Recibos em PDF</button>
                 </div>
             </div>
 
@@ -1660,59 +1233,6 @@
 
 <div class="footer">
                 <p>Sistema de Vale Transporte Semanal - Grupo KDM | Última atualização: <span id="updateTime">--</span></p>
-
-            <!-- TAB: SINCRONIZAÇÃO -->
-            <div id="tab-sincronizacao" class="tab-content">
-                <div class="info-banner">
-                    <strong>🔄 Central de Sincronização</strong><br>
-                    Gerencie seus dados locais e sincronize com o sistema online
-                </div>
-
-                <div class="summary" style="margin-top: 20px;">
-                    <div class="summary-item">
-                        <div class="summary-label">💾 Status Local</div>
-                        <div class="summary-value" id="statusLocal">Conectado</div>
-                    </div>
-                    <div class="summary-item">
-                        <div class="summary-label">⏱️ Última Sincronização</div>
-                        <div class="summary-value" id="ultimaSinc">Nunca</div>
-                    </div>
-                    <div class="summary-item">
-                        <div class="summary-label">📝 Alterações Pendentes</div>
-                        <div class="summary-value" id="alteracoesPendentes">0</div>
-                    </div>
-                    <div class="summary-item">
-                        <div class="summary-label">📦 Tamanho dos Dados</div>
-                        <div class="summary-value" id="tamanhoDados">0 KB</div>
-                    </div>
-                </div>
-
-                <div style="margin-top: 30px;">
-                    <h3>📊 Dados Armazenados</h3>
-                    <div id="resumoDados" style="background: #f5f5f5; padding: 15px; border-radius: 8px; margin-top: 10px; font-size: 14px;">
-                        Carregando...
-                    </div>
-                </div>
-
-                <div style="margin-top: 30px;">
-                    <h3>🛠️ Ações</h3>
-                    <div class="actions" style="gap: 10px; flex-wrap: wrap;">
-                        <button class="btn-save" onclick="exportarDados()" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 12px 28px; border-radius: 6px; font-weight: 600; font-size: 15px; cursor: pointer;">📥 Exportar Dados (JSON)</button>
-                        <button class="btn-save" onclick="importarDados()" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; border: none; padding: 12px 28px; border-radius: 6px; font-weight: 600; font-size: 15px; cursor: pointer;">📤 Importar Dados</button>
-                        <button class="btn-clear" onclick="fazerBackup()">💾 Backup Local</button>
-                        <button class="btn-clear" onclick="limparDadosLocais()">🗑️ Limpar Tudo</button>
-                    </div>
-                </div>
-
-                <div style="margin-top: 30px;">
-                    <h3>📜 Histórico de Sincronizações</h3>
-                    <div id="historicoSinc" style="background: #f5f5f5; padding: 15px; border-radius: 8px; margin-top: 10px; font-size: 13px; max-height: 200px; overflow-y: auto;">
-                        <em>Nenhuma sincronização realizada ainda</em>
-                    </div>
-                </div>
-
-                <input type="file" id="fileInput" style="display: none;" accept=".json" onchange="processarImportacao(event)">
-            </div>
             </div>
         </div>
     </div>
@@ -2733,405 +2253,6 @@
                 showApp();
             }
         });
-    
-        function gerarRecibosEmPDF() {
-            const { jsPDF } = window.jspdf;
-            const recibos = {};
-            
-            colaboradores.forEach(colab => {
-                if (!colab.ativo) return;
-                recibos[colab.mat] = {
-                    nome: colab.nome,
-                    mat: colab.mat,
-                    empresa: colab.empresa,
-                    diasPagos: [],
-                    diasDescontados: []
-                };
-            });
-            
-            Object.keys(allData).forEach(mes => {
-                Object.keys(allData[mes]).forEach(key => {
-                    const match = key.match(/^(\d+)_(\d+)_(faltas|valor)$/);
-                    if (!match) return;
-                    const [_, mat, semana, tipo] = match;
-                    const colab = colaboradores.find(c => c.mat === mat);
-                    if (!colab || !recibos[mat]) return;
-                    
-                    if (tipo === 'faltas') {
-                        const faltas = allData[mes][key];
-                        if (faltas) recibos[mat].diasDescontados.push(`Semana ${semana}: ${faltas} dias`);
-                    } else if (tipo === 'valor') {
-                        const valor = parseFloat(allData[mes][key] || 0);
-                        if (valor > 0) recibos[mat].diasPagos.push(`Semana ${semana}: R$ ${valor.toFixed(2)}`);
-                    }
-                });
-            });
-            
-            let gerados = 0;
-            Object.values(recibos).forEach((recibo) => {
-                const doc = new jsPDF();
-                doc.setFontSize(16);
-                doc.text('RECIBO DE VALE TRANSPORTE', 105, 15, { align: 'center' });
-                doc.setFontSize(10);
-                doc.text('Grupo KDM', 105, 25, { align: 'center' });
-                doc.setFontSize(11);
-                doc.text(`Colaborador: ${recibo.nome}`, 20, 40);
-                doc.text(`Matrícula: ${recibo.mat}`, 20, 50);
-                doc.text(`Empresa: ${recibo.empresa}`, 20, 60);
-                
-                doc.setFontSize(12);
-                doc.text('DIAS PAGOS:', 20, 75);
-                doc.setFontSize(10);
-                let yPos = 85;
-                if (recibo.diasPagos.length > 0) {
-                    recibo.diasPagos.forEach(dia => {
-                        doc.text(dia, 25, yPos);
-                        yPos += 8;
-                    });
-                } else {
-                    doc.text('Nenhum dia pago registrado', 25, yPos);
-                }
-                
-                doc.setFontSize(12);
-                yPos += 5;
-                doc.text('DIAS DESCONTADOS:', 20, yPos);
-                doc.setFontSize(10);
-                yPos += 10;
-                if (recibo.diasDescontados.length > 0) {
-                    recibo.diasDescontados.forEach(dia => {
-                        doc.text(dia, 25, yPos);
-                        yPos += 8;
-                    });
-                } else {
-                    doc.text('Nenhum dia descontado', 25, yPos);
-                }
-                
-                doc.setFontSize(9);
-                doc.text('Data: ' + new Date().toLocaleDateString('pt-BR'), 20, 270);
-                doc.save(`Recibo_${recibo.mat}_${recibo.nome.replace(/\s+/g, '_')}.pdf`);
-                gerados++;
-            });
-            
-            alert(`✅ ${gerados} recibo(s) gerado(s) com sucesso!`);
-        }
-
-
-        // ===== SISTEMA DE SINCRONIZAÇÃO =====
-        let historicoSync = JSON.parse(localStorage.getItem('historicoSync') || '[]');
-        
-        function atualizarStatusSincronizacao() {
-            const ultimaSync = localStorage.getItem('ultimaSincronizacao') || 'Nunca';
-            document.getElementById('ultimaSinc').textContent = ultimaSync;
-            
-            const tamanhoData = new Blob([JSON.stringify(allData)]).size;
-            document.getElementById('tamanhoDados').textContent = (tamanhoData / 1024).toFixed(2) + ' KB';
-            
-            const resumo = `
-                <strong>Colaboradores:</strong> ${colaboradores.length}<br>
-                <strong>Meses registrados:</strong> ${Object.keys(allData).length}<br>
-                <strong>Total de lançamentos:</strong> ${Object.keys(allData).reduce((acc, mes) => acc + Object.keys(allData[mes]).length, 0)}
-            `;
-            document.getElementById('resumoDados').innerHTML = resumo;
-            
-            atualizarHistorico();
-        }
-
-        function exportarDados() {
-            const dados = {
-                timestamp: new Date().toISOString(),
-                versao: '1.0',
-                colaboradores: colaboradores,
-                dados: allData,
-                backup: JSON.parse(localStorage.getItem('backup') || '{}')
-            };
-            
-            const dataStr = JSON.stringify(dados, null, 2);
-            const dataBlob = new Blob([dataStr], { type: 'application/json' });
-            const url = URL.createObjectURL(dataBlob);
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = `backup_vt_${new Date().toISOString().split('T')[0]}.json`;
-            link.click();
-            
-            registrarSincronizacao('Exportação de dados realizada');
-            alert('✅ Dados exportados com sucesso!');
-        }
-
-        function importarDados() {
-            document.getElementById('fileInput').click();
-        }
-
-        function processarImportacao(event) {
-            const file = event.target.files[0];
-            if (!file) return;
-            
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                try {
-                    const dados = JSON.parse(e.target.result);
-                    
-                    if (confirm('Tem certeza? Isso vai substituir todos os dados locais!')) {
-                        allData = dados.dados || allData;
-                        colaboradores = dados.colaboradores || colaboradores;
-                        localStorage.setItem('allData', JSON.stringify(allData));
-                        localStorage.setItem('colaboradores', JSON.stringify(colaboradores));
-                        
-                        registrarSincronizacao('Importação de dados realizada');
-                        alert('✅ Dados importados com sucesso!');
-                        atualizarStatusSincronizacao();
-                        location.reload();
-                    }
-                } catch (error) {
-                    alert('❌ Erro ao importar: ' + error.message);
-                }
-            };
-            reader.readAsText(file);
-        }
-
-        function fazerBackup() {
-            const backup = {
-                timestamp: new Date().toISOString(),
-                colaboradores: colaboradores,
-                dados: allData
-            };
-            
-            localStorage.setItem('backup', JSON.stringify(backup));
-            registrarSincronizacao('Backup local criado');
-            alert('✅ Backup realizado com sucesso!');
-        }
-
-        function limparDadosLocais() {
-            if (confirm('⚠️ ATENÇÃO! Isso vai apagar TODOS os dados locais! Você tem certeza?')) {
-                if (confirm('Digite SIM para confirmar a exclusão de todos os dados:')) {
-                    localStorage.clear();
-                    sessionStorage.clear();
-                    registrarSincronizacao('Todos os dados foram apagados');
-                    alert('✅ Dados locais limpos!');
-                    location.reload();
-                }
-            }
-        }
-
-        function registrarSincronizacao(acao) {
-            const registro = {
-                timestamp: new Date().toLocaleString('pt-BR'),
-                acao: acao
-            };
-            
-            historicoSync.push(registro);
-            if (historicoSync.length > 20) historicoSync.shift();
-            
-            localStorage.setItem('historicoSync', JSON.stringify(historicoSync));
-            localStorage.setItem('ultimaSincronizacao', new Date().toLocaleString('pt-BR'));
-            
-            atualizarHistorico();
-        }
-
-        function atualizarHistorico() {
-            const historico = JSON.parse(localStorage.getItem('historicoSync') || '[]');
-            let html = '';
-            
-            if (historico.length === 0) {
-                html = '<em>Nenhuma ação registrada</em>';
-            } else {
-                historico.slice().reverse().forEach(reg => {
-                    html += `<div style="padding: 8px; border-bottom: 1px solid #ddd;">
-                        <strong>${reg.timestamp}:</strong> ${reg.acao}
-                    </div>`;
-                });
-            }
-            
-            document.getElementById('historicoSinc').innerHTML = html;
-        }
-
-        // Salvar dados automaticamente quando muda algo
-        function saveToLocalStorage() {
-            localStorage.setItem('allData', JSON.stringify(allData));
-            localStorage.setItem('colaboradores', JSON.stringify(colaboradores));
-            registrarSincronizacao('Auto-save realizado');
-        }
-
-        // Carregar dados do localStorage ao iniciar
-        window.addEventListener('load', function() {
-            const savedData = localStorage.getItem('allData');
-            const savedColabs = localStorage.getItem('colaboradores');
-            
-            if (savedData) allData = JSON.parse(savedData);
-            if (savedColabs) colaboradores = JSON.parse(savedColabs);
-            
-            setTimeout(atualizarStatusSincronizacao, 500);
-        });
-
-
-        // ===== GERENCIAR FALTAS COM DATAS E ATESTADO =====
-        let faltasAtual = [];
-        
-        function abrirModalFaltas(mat, semana, mes) {
-            faltasAtual = [];
-            const key = `${mat}_${semana}_faltas_detalhes`;
-            
-            if (allData[mes] && allData[mes][key]) {
-                faltasAtual = JSON.parse(allData[mes][key]);
-            }
-            
-            document.getElementById('dataMatSemana').value = `${mat}|${semana}|${mes}`;
-            renderizarFaltasModal();
-            document.getElementById('modalFaltas').classList.add('show');
-        }
-        
-        function fecharModalFaltas() {
-            document.getElementById('modalFaltas').classList.remove('show');
-        }
-        
-        function adicionarFalta() {
-            const data = document.getElementById('faltaData').value;
-            const atestado = document.getElementById('faltaAtestado').value;
-            
-            if (!data) {
-                alert('Selecione uma data!');
-                return;
-            }
-            
-            faltasAtual.push({
-                data: data,
-                atestado: atestado,
-                dataFormatada: new Date(data).toLocaleDateString('pt-BR')
-            });
-            
-            document.getElementById('faltaData').value = '';
-            renderizarFaltasModal();
-        }
-        
-        function removerFalta(index) {
-            faltasAtual.splice(index, 1);
-            renderizarFaltasModal();
-        }
-        
-        function renderizarFaltasModal() {
-            let html = '';
-            
-            faltasAtual.forEach((falta, index) => {
-                const badgeClass = falta.atestado === 'com' ? 'com-atestado' : 'sem-atestado';
-                const badgeText = falta.atestado === 'com' ? '✅ COM ATESTADO' : '❌ SEM ATESTADO';
-                
-                html += `
-                    <div class="falta-item">
-                        <div class="falta-info">
-                            <div class="falta-data">${falta.dataFormatada}</div>
-                            <div class="falta-atestado">
-                                <span class="atestado-badge ${badgeClass}">${badgeText}</span>
-                            </div>
-                        </div>
-                        <button onclick="removerFalta(${index})" style="background: #f8d7da; color: #721c24; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: 600;">✕</button>
-                    </div>
-                `;
-            });
-            
-            document.getElementById('listaFaltas').innerHTML = html || '<em style="color: #999;">Nenhuma falta registrada</em>';
-            document.getElementById('totalFaltas').textContent = faltasAtual.length;
-        }
-        
-        function salvarFaltas() {
-            const [mat, semana, mes] = document.getElementById('dataMatSemana').value.split('|');
-            
-            if (!allData[mes]) allData[mes] = {};
-            
-            // Salvar detalhes das faltas
-            const key = `${mat}_${semana}_faltas_detalhes`;
-            allData[mes][key] = JSON.stringify(faltasAtual);
-            
-            // Salvar contagem simples também
-            const keySimples = `${mat}_${semana}_faltas`;
-            allData[mes][keySimples] = faltasAtual.length.toString();
-            
-            saveToLocalStorage();
-            registrarSincronizacao('Faltas atualizadas com datas e atestado');
-            
-            alert(`✅ ${faltasAtual.length} falta(s) salva(s)!`);
-            fecharModalFaltas();
-            
-            // Recarregar tabela se estiver na aba correta
-            if (document.getElementById('tab-lancamento').classList.contains('active')) {
-                renderizarTabelaLancamento();
-            }
-        }
-
-
-        function exibirFaltasResumo(mat, semana, mes) {
-            const keyDetalhes = `${mat}_${semana}_faltas_detalhes`;
-            const keySimples = `${mat}_${semana}_faltas`;
-            
-            if (allData[mes] && allData[mes][keyDetalhes]) {
-                try {
-                    const faltas = JSON.parse(allData[mes][keyDetalhes]);
-                    
-                    if (faltas.length === 0) {
-                        return '<span style="color: #27ae60; font-weight: 600;">✅ Sem faltas</span>';
-                    }
-                    
-                    let html = '<div style="background: #fff3cd; padding: 10px; border-radius: 6px; margin: 5px 0;">';
-                    faltas.forEach(falta => {
-                        const badgeClass = falta.atestado === 'com' ? 'com-atestado' : 'sem-atestado';
-                        const badgeText = falta.atestado === 'com' ? '✅ COM' : '❌ SEM';
-                        
-                        html += `<div style="margin: 5px 0; font-size: 13px;">
-                            📅 ${falta.dataFormatada} 
-                            <span class="atestado-badge ${badgeClass}" style="margin-left: 8px;">${badgeText}</span>
-                        </div>`;
-                    });
-                    html += '</div>';
-                    
-                    return html;
-                } catch (e) {
-                    // Se não conseguir parsear, mostrar número simples
-                }
-            }
-            
-            // Fallback: mostrar número simples
-            const simples = allData[mes] ? (allData[mes][keySimples] || '0') : '0';
-            if (simples === '0') {
-                return '<span style="color: #27ae60; font-weight: 600;">✅ Sem faltas</span>';
-            }
-            return `<span style="color: #e74c3c; font-weight: 600;">${simples} dia(s)</span>`;
-        }
-
-</script>
-
-        <!-- MODAL GERENCIAR FALTAS -->
-        <div id="modalFaltas" class="modal-faltas">
-            <div class="modal-content-faltas">
-                <h3 style="margin-top: 0; color: #333;">📅 Registrar Faltas com Datas</h3>
-                
-                <input type="hidden" id="dataMatSemana">
-                
-                <div style="margin: 20px 0;">
-                    <label style="display: block; margin-bottom: 8px; font-weight: 600;">Data da Falta:</label>
-                    <input type="date" id="faltaData" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-size: 14px;">
-                </div>
-                
-                <div style="margin: 20px 0;">
-                    <label style="display: block; margin-bottom: 8px; font-weight: 600;">Tipo de Falta:</label>
-                    <select id="faltaAtestado" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-size: 14px;">
-                        <option value="com">✅ COM ATESTADO</option>
-                        <option value="sem">❌ SEM ATESTADO</option>
-                    </select>
-                </div>
-                
-                <button onclick="adicionarFalta()" style="width: 100%; padding: 12px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; margin-bottom: 20px;">+ Adicionar Falta</button>
-                
-                <div style="border-top: 2px solid #ddd; padding-top: 15px;">
-                    <h4 style="margin: 0 0 10px 0;">Faltas Registradas (<span id="totalFaltas">0</span>)</h4>
-                    <div id="listaFaltas" style="max-height: 250px; overflow-y: auto;">
-                        <em style="color: #999;">Nenhuma falta registrada</em>
-                    </div>
-                </div>
-                
-                <div style="margin-top: 20px; display: flex; gap: 10px;">
-                    <button onclick="salvarFaltas()" style="flex: 1; padding: 12px; background: #28a745; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">✅ Salvar Faltas</button>
-                    <button onclick="fecharModalFaltas()" style="flex: 1; padding: 12px; background: #ccc; color: #333; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">Cancelar</button>
-                </div>
-            </div>
-        </div>
-
+    </script>
 </body>
 </html>
