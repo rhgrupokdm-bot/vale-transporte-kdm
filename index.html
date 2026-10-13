@@ -1015,6 +1015,153 @@
             alert(`✅ ${gerados} recibo(s) gerado(s) com sucesso!`);
         }
 
+
+        // ===== SISTEMA DE SINCRONIZAÇÃO =====
+        let historicoSync = JSON.parse(localStorage.getItem('historicoSync') || '[]');
+        
+        function atualizarStatusSincronizacao() {
+            const ultimaSync = localStorage.getItem('ultimaSincronizacao') || 'Nunca';
+            document.getElementById('ultimaSinc').textContent = ultimaSync;
+            
+            const tamanhoData = new Blob([JSON.stringify(allData)]).size;
+            document.getElementById('tamanhoDados').textContent = (tamanhoData / 1024).toFixed(2) + ' KB';
+            
+            const resumo = `
+                <strong>Colaboradores:</strong> ${colaboradores.length}<br>
+                <strong>Meses registrados:</strong> ${Object.keys(allData).length}<br>
+                <strong>Total de lançamentos:</strong> ${Object.keys(allData).reduce((acc, mes) => acc + Object.keys(allData[mes]).length, 0)}
+            `;
+            document.getElementById('resumoDados').innerHTML = resumo;
+            
+            atualizarHistorico();
+        }
+
+        function exportarDados() {
+            const dados = {
+                timestamp: new Date().toISOString(),
+                versao: '1.0',
+                colaboradores: colaboradores,
+                dados: allData,
+                backup: JSON.parse(localStorage.getItem('backup') || '{}')
+            };
+            
+            const dataStr = JSON.stringify(dados, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `backup_vt_${new Date().toISOString().split('T')[0]}.json`;
+            link.click();
+            
+            registrarSincronizacao('Exportação de dados realizada');
+            alert('✅ Dados exportados com sucesso!');
+        }
+
+        function importarDados() {
+            document.getElementById('fileInput').click();
+        }
+
+        function processarImportacao(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const dados = JSON.parse(e.target.result);
+                    
+                    if (confirm('Tem certeza? Isso vai substituir todos os dados locais!')) {
+                        allData = dados.dados || allData;
+                        colaboradores = dados.colaboradores || colaboradores;
+                        localStorage.setItem('allData', JSON.stringify(allData));
+                        localStorage.setItem('colaboradores', JSON.stringify(colaboradores));
+                        
+                        registrarSincronizacao('Importação de dados realizada');
+                        alert('✅ Dados importados com sucesso!');
+                        atualizarStatusSincronizacao();
+                        location.reload();
+                    }
+                } catch (error) {
+                    alert('❌ Erro ao importar: ' + error.message);
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function fazerBackup() {
+            const backup = {
+                timestamp: new Date().toISOString(),
+                colaboradores: colaboradores,
+                dados: allData
+            };
+            
+            localStorage.setItem('backup', JSON.stringify(backup));
+            registrarSincronizacao('Backup local criado');
+            alert('✅ Backup realizado com sucesso!');
+        }
+
+        function limparDadosLocais() {
+            if (confirm('⚠️ ATENÇÃO! Isso vai apagar TODOS os dados locais! Você tem certeza?')) {
+                if (confirm('Digite SIM para confirmar a exclusão de todos os dados:')) {
+                    localStorage.clear();
+                    sessionStorage.clear();
+                    registrarSincronizacao('Todos os dados foram apagados');
+                    alert('✅ Dados locais limpos!');
+                    location.reload();
+                }
+            }
+        }
+
+        function registrarSincronizacao(acao) {
+            const registro = {
+                timestamp: new Date().toLocaleString('pt-BR'),
+                acao: acao
+            };
+            
+            historicoSync.push(registro);
+            if (historicoSync.length > 20) historicoSync.shift();
+            
+            localStorage.setItem('historicoSync', JSON.stringify(historicoSync));
+            localStorage.setItem('ultimaSincronizacao', new Date().toLocaleString('pt-BR'));
+            
+            atualizarHistorico();
+        }
+
+        function atualizarHistorico() {
+            const historico = JSON.parse(localStorage.getItem('historicoSync') || '[]');
+            let html = '';
+            
+            if (historico.length === 0) {
+                html = '<em>Nenhuma ação registrada</em>';
+            } else {
+                historico.slice().reverse().forEach(reg => {
+                    html += `<div style="padding: 8px; border-bottom: 1px solid #ddd;">
+                        <strong>${reg.timestamp}:</strong> ${reg.acao}
+                    </div>`;
+                });
+            }
+            
+            document.getElementById('historicoSinc').innerHTML = html;
+        }
+
+        // Salvar dados automaticamente quando muda algo
+        function saveToLocalStorage() {
+            localStorage.setItem('allData', JSON.stringify(allData));
+            localStorage.setItem('colaboradores', JSON.stringify(colaboradores));
+            registrarSincronizacao('Auto-save realizado');
+        }
+
+        // Carregar dados do localStorage ao iniciar
+        window.addEventListener('load', function() {
+            const savedData = localStorage.getItem('allData');
+            const savedColabs = localStorage.getItem('colaboradores');
+            
+            if (savedData) allData = JSON.parse(savedData);
+            if (savedColabs) colaboradores = JSON.parse(savedColabs);
+            
+            setTimeout(atualizarStatusSincronizacao, 500);
+        });
+
 </script>
 </head>
 <body>
@@ -1089,6 +1236,7 @@
                 <button class="tab-btn" onclick="switchTab('mensal')">📈 Resumo Mensal</button>
                 <button class="tab-btn" onclick="switchTab('empresas')">🏢 Empresas</button>
                 <button class="tab-btn" onclick="switchTab('configuracoes')">⚙️ Colaboradores</button>
+                <button class="tab-btn" onclick="switchTab('sincronizacao')">🔄 Sincronização</button>
             </div>
 
             <!-- TAB: LANÇAMENTO -->
@@ -1307,6 +1455,59 @@
 
 <div class="footer">
                 <p>Sistema de Vale Transporte Semanal - Grupo KDM | Última atualização: <span id="updateTime">--</span></p>
+
+            <!-- TAB: SINCRONIZAÇÃO -->
+            <div id="tab-sincronizacao" class="tab-content">
+                <div class="info-banner">
+                    <strong>🔄 Central de Sincronização</strong><br>
+                    Gerencie seus dados locais e sincronize com o sistema online
+                </div>
+
+                <div class="summary" style="margin-top: 20px;">
+                    <div class="summary-item">
+                        <div class="summary-label">💾 Status Local</div>
+                        <div class="summary-value" id="statusLocal">Conectado</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-label">⏱️ Última Sincronização</div>
+                        <div class="summary-value" id="ultimaSinc">Nunca</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-label">📝 Alterações Pendentes</div>
+                        <div class="summary-value" id="alteracoesPendentes">0</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-label">📦 Tamanho dos Dados</div>
+                        <div class="summary-value" id="tamanhoDados">0 KB</div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <h3>📊 Dados Armazenados</h3>
+                    <div id="resumoDados" style="background: #f5f5f5; padding: 15px; border-radius: 8px; margin-top: 10px; font-size: 14px;">
+                        Carregando...
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <h3>🛠️ Ações</h3>
+                    <div class="actions" style="gap: 10px; flex-wrap: wrap;">
+                        <button class="btn-save" onclick="exportarDados()" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 12px 28px; border-radius: 6px; font-weight: 600; font-size: 15px; cursor: pointer;">📥 Exportar Dados (JSON)</button>
+                        <button class="btn-save" onclick="importarDados()" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; border: none; padding: 12px 28px; border-radius: 6px; font-weight: 600; font-size: 15px; cursor: pointer;">📤 Importar Dados</button>
+                        <button class="btn-clear" onclick="fazerBackup()">💾 Backup Local</button>
+                        <button class="btn-clear" onclick="limparDadosLocais()">🗑️ Limpar Tudo</button>
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <h3>📜 Histórico de Sincronizações</h3>
+                    <div id="historicoSinc" style="background: #f5f5f5; padding: 15px; border-radius: 8px; margin-top: 10px; font-size: 13px; max-height: 200px; overflow-y: auto;">
+                        <em>Nenhuma sincronização realizada ainda</em>
+                    </div>
+                </div>
+
+                <input type="file" id="fileInput" style="display: none;" accept=".json" onchange="processarImportacao(event)">
+            </div>
             </div>
         </div>
     </div>
@@ -2408,6 +2609,153 @@
             
             alert(`✅ ${gerados} recibo(s) gerado(s) com sucesso!`);
         }
+
+
+        // ===== SISTEMA DE SINCRONIZAÇÃO =====
+        let historicoSync = JSON.parse(localStorage.getItem('historicoSync') || '[]');
+        
+        function atualizarStatusSincronizacao() {
+            const ultimaSync = localStorage.getItem('ultimaSincronizacao') || 'Nunca';
+            document.getElementById('ultimaSinc').textContent = ultimaSync;
+            
+            const tamanhoData = new Blob([JSON.stringify(allData)]).size;
+            document.getElementById('tamanhoDados').textContent = (tamanhoData / 1024).toFixed(2) + ' KB';
+            
+            const resumo = `
+                <strong>Colaboradores:</strong> ${colaboradores.length}<br>
+                <strong>Meses registrados:</strong> ${Object.keys(allData).length}<br>
+                <strong>Total de lançamentos:</strong> ${Object.keys(allData).reduce((acc, mes) => acc + Object.keys(allData[mes]).length, 0)}
+            `;
+            document.getElementById('resumoDados').innerHTML = resumo;
+            
+            atualizarHistorico();
+        }
+
+        function exportarDados() {
+            const dados = {
+                timestamp: new Date().toISOString(),
+                versao: '1.0',
+                colaboradores: colaboradores,
+                dados: allData,
+                backup: JSON.parse(localStorage.getItem('backup') || '{}')
+            };
+            
+            const dataStr = JSON.stringify(dados, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `backup_vt_${new Date().toISOString().split('T')[0]}.json`;
+            link.click();
+            
+            registrarSincronizacao('Exportação de dados realizada');
+            alert('✅ Dados exportados com sucesso!');
+        }
+
+        function importarDados() {
+            document.getElementById('fileInput').click();
+        }
+
+        function processarImportacao(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const dados = JSON.parse(e.target.result);
+                    
+                    if (confirm('Tem certeza? Isso vai substituir todos os dados locais!')) {
+                        allData = dados.dados || allData;
+                        colaboradores = dados.colaboradores || colaboradores;
+                        localStorage.setItem('allData', JSON.stringify(allData));
+                        localStorage.setItem('colaboradores', JSON.stringify(colaboradores));
+                        
+                        registrarSincronizacao('Importação de dados realizada');
+                        alert('✅ Dados importados com sucesso!');
+                        atualizarStatusSincronizacao();
+                        location.reload();
+                    }
+                } catch (error) {
+                    alert('❌ Erro ao importar: ' + error.message);
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function fazerBackup() {
+            const backup = {
+                timestamp: new Date().toISOString(),
+                colaboradores: colaboradores,
+                dados: allData
+            };
+            
+            localStorage.setItem('backup', JSON.stringify(backup));
+            registrarSincronizacao('Backup local criado');
+            alert('✅ Backup realizado com sucesso!');
+        }
+
+        function limparDadosLocais() {
+            if (confirm('⚠️ ATENÇÃO! Isso vai apagar TODOS os dados locais! Você tem certeza?')) {
+                if (confirm('Digite SIM para confirmar a exclusão de todos os dados:')) {
+                    localStorage.clear();
+                    sessionStorage.clear();
+                    registrarSincronizacao('Todos os dados foram apagados');
+                    alert('✅ Dados locais limpos!');
+                    location.reload();
+                }
+            }
+        }
+
+        function registrarSincronizacao(acao) {
+            const registro = {
+                timestamp: new Date().toLocaleString('pt-BR'),
+                acao: acao
+            };
+            
+            historicoSync.push(registro);
+            if (historicoSync.length > 20) historicoSync.shift();
+            
+            localStorage.setItem('historicoSync', JSON.stringify(historicoSync));
+            localStorage.setItem('ultimaSincronizacao', new Date().toLocaleString('pt-BR'));
+            
+            atualizarHistorico();
+        }
+
+        function atualizarHistorico() {
+            const historico = JSON.parse(localStorage.getItem('historicoSync') || '[]');
+            let html = '';
+            
+            if (historico.length === 0) {
+                html = '<em>Nenhuma ação registrada</em>';
+            } else {
+                historico.slice().reverse().forEach(reg => {
+                    html += `<div style="padding: 8px; border-bottom: 1px solid #ddd;">
+                        <strong>${reg.timestamp}:</strong> ${reg.acao}
+                    </div>`;
+                });
+            }
+            
+            document.getElementById('historicoSinc').innerHTML = html;
+        }
+
+        // Salvar dados automaticamente quando muda algo
+        function saveToLocalStorage() {
+            localStorage.setItem('allData', JSON.stringify(allData));
+            localStorage.setItem('colaboradores', JSON.stringify(colaboradores));
+            registrarSincronizacao('Auto-save realizado');
+        }
+
+        // Carregar dados do localStorage ao iniciar
+        window.addEventListener('load', function() {
+            const savedData = localStorage.getItem('allData');
+            const savedColabs = localStorage.getItem('colaboradores');
+            
+            if (savedData) allData = JSON.parse(savedData);
+            if (savedColabs) colaboradores = JSON.parse(savedColabs);
+            
+            setTimeout(atualizarStatusSincronizacao, 500);
+        });
 
 </script>
 </body>
