@@ -931,6 +931,78 @@
             background: #2563eb;
             box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
         }
+    
+        .modal-faltas {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-faltas.show {
+            display: flex;
+        }
+        
+        .modal-content-faltas {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+        
+        .falta-item {
+            background: #f5f5f5;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 4px solid #667eea;
+        }
+        
+        .falta-info {
+            flex: 1;
+        }
+        
+        .falta-data {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .falta-atestado {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+        
+        .atestado-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-right: 5px;
+        }
+        
+        .com-atestado {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .sem-atestado {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
     </style>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js">
@@ -1161,6 +1233,139 @@
             
             setTimeout(atualizarStatusSincronizacao, 500);
         });
+
+
+        // ===== GERENCIAR FALTAS COM DATAS E ATESTADO =====
+        let faltasAtual = [];
+        
+        function abrirModalFaltas(mat, semana, mes) {
+            faltasAtual = [];
+            const key = `${mat}_${semana}_faltas_detalhes`;
+            
+            if (allData[mes] && allData[mes][key]) {
+                faltasAtual = JSON.parse(allData[mes][key]);
+            }
+            
+            document.getElementById('dataMatSemana').value = `${mat}|${semana}|${mes}`;
+            renderizarFaltasModal();
+            document.getElementById('modalFaltas').classList.add('show');
+        }
+        
+        function fecharModalFaltas() {
+            document.getElementById('modalFaltas').classList.remove('show');
+        }
+        
+        function adicionarFalta() {
+            const data = document.getElementById('faltaData').value;
+            const atestado = document.getElementById('faltaAtestado').value;
+            
+            if (!data) {
+                alert('Selecione uma data!');
+                return;
+            }
+            
+            faltasAtual.push({
+                data: data,
+                atestado: atestado,
+                dataFormatada: new Date(data).toLocaleDateString('pt-BR')
+            });
+            
+            document.getElementById('faltaData').value = '';
+            renderizarFaltasModal();
+        }
+        
+        function removerFalta(index) {
+            faltasAtual.splice(index, 1);
+            renderizarFaltasModal();
+        }
+        
+        function renderizarFaltasModal() {
+            let html = '';
+            
+            faltasAtual.forEach((falta, index) => {
+                const badgeClass = falta.atestado === 'com' ? 'com-atestado' : 'sem-atestado';
+                const badgeText = falta.atestado === 'com' ? '✅ COM ATESTADO' : '❌ SEM ATESTADO';
+                
+                html += `
+                    <div class="falta-item">
+                        <div class="falta-info">
+                            <div class="falta-data">${falta.dataFormatada}</div>
+                            <div class="falta-atestado">
+                                <span class="atestado-badge ${badgeClass}">${badgeText}</span>
+                            </div>
+                        </div>
+                        <button onclick="removerFalta(${index})" style="background: #f8d7da; color: #721c24; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: 600;">✕</button>
+                    </div>
+                `;
+            });
+            
+            document.getElementById('listaFaltas').innerHTML = html || '<em style="color: #999;">Nenhuma falta registrada</em>';
+            document.getElementById('totalFaltas').textContent = faltasAtual.length;
+        }
+        
+        function salvarFaltas() {
+            const [mat, semana, mes] = document.getElementById('dataMatSemana').value.split('|');
+            
+            if (!allData[mes]) allData[mes] = {};
+            
+            // Salvar detalhes das faltas
+            const key = `${mat}_${semana}_faltas_detalhes`;
+            allData[mes][key] = JSON.stringify(faltasAtual);
+            
+            // Salvar contagem simples também
+            const keySimples = `${mat}_${semana}_faltas`;
+            allData[mes][keySimples] = faltasAtual.length.toString();
+            
+            saveToLocalStorage();
+            registrarSincronizacao('Faltas atualizadas com datas e atestado');
+            
+            alert(`✅ ${faltasAtual.length} falta(s) salva(s)!`);
+            fecharModalFaltas();
+            
+            // Recarregar tabela se estiver na aba correta
+            if (document.getElementById('tab-lancamento').classList.contains('active')) {
+                renderizarTabelaLancamento();
+            }
+        }
+
+
+        function exibirFaltasResumo(mat, semana, mes) {
+            const keyDetalhes = `${mat}_${semana}_faltas_detalhes`;
+            const keySimples = `${mat}_${semana}_faltas`;
+            
+            if (allData[mes] && allData[mes][keyDetalhes]) {
+                try {
+                    const faltas = JSON.parse(allData[mes][keyDetalhes]);
+                    
+                    if (faltas.length === 0) {
+                        return '<span style="color: #27ae60; font-weight: 600;">✅ Sem faltas</span>';
+                    }
+                    
+                    let html = '<div style="background: #fff3cd; padding: 10px; border-radius: 6px; margin: 5px 0;">';
+                    faltas.forEach(falta => {
+                        const badgeClass = falta.atestado === 'com' ? 'com-atestado' : 'sem-atestado';
+                        const badgeText = falta.atestado === 'com' ? '✅ COM' : '❌ SEM';
+                        
+                        html += `<div style="margin: 5px 0; font-size: 13px;">
+                            📅 ${falta.dataFormatada} 
+                            <span class="atestado-badge ${badgeClass}" style="margin-left: 8px;">${badgeText}</span>
+                        </div>`;
+                    });
+                    html += '</div>';
+                    
+                    return html;
+                } catch (e) {
+                    // Se não conseguir parsear, mostrar número simples
+                }
+            }
+            
+            // Fallback: mostrar número simples
+            const simples = allData[mes] ? (allData[mes][keySimples] || '0') : '0';
+            if (simples === '0') {
+                return '<span style="color: #27ae60; font-weight: 600;">✅ Sem faltas</span>';
+            }
+            return `<span style="color: #e74c3c; font-weight: 600;">${simples} dia(s)</span>`;
+        }
 
 </script>
 </head>
@@ -2757,6 +2962,176 @@
             setTimeout(atualizarStatusSincronizacao, 500);
         });
 
+
+        // ===== GERENCIAR FALTAS COM DATAS E ATESTADO =====
+        let faltasAtual = [];
+        
+        function abrirModalFaltas(mat, semana, mes) {
+            faltasAtual = [];
+            const key = `${mat}_${semana}_faltas_detalhes`;
+            
+            if (allData[mes] && allData[mes][key]) {
+                faltasAtual = JSON.parse(allData[mes][key]);
+            }
+            
+            document.getElementById('dataMatSemana').value = `${mat}|${semana}|${mes}`;
+            renderizarFaltasModal();
+            document.getElementById('modalFaltas').classList.add('show');
+        }
+        
+        function fecharModalFaltas() {
+            document.getElementById('modalFaltas').classList.remove('show');
+        }
+        
+        function adicionarFalta() {
+            const data = document.getElementById('faltaData').value;
+            const atestado = document.getElementById('faltaAtestado').value;
+            
+            if (!data) {
+                alert('Selecione uma data!');
+                return;
+            }
+            
+            faltasAtual.push({
+                data: data,
+                atestado: atestado,
+                dataFormatada: new Date(data).toLocaleDateString('pt-BR')
+            });
+            
+            document.getElementById('faltaData').value = '';
+            renderizarFaltasModal();
+        }
+        
+        function removerFalta(index) {
+            faltasAtual.splice(index, 1);
+            renderizarFaltasModal();
+        }
+        
+        function renderizarFaltasModal() {
+            let html = '';
+            
+            faltasAtual.forEach((falta, index) => {
+                const badgeClass = falta.atestado === 'com' ? 'com-atestado' : 'sem-atestado';
+                const badgeText = falta.atestado === 'com' ? '✅ COM ATESTADO' : '❌ SEM ATESTADO';
+                
+                html += `
+                    <div class="falta-item">
+                        <div class="falta-info">
+                            <div class="falta-data">${falta.dataFormatada}</div>
+                            <div class="falta-atestado">
+                                <span class="atestado-badge ${badgeClass}">${badgeText}</span>
+                            </div>
+                        </div>
+                        <button onclick="removerFalta(${index})" style="background: #f8d7da; color: #721c24; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: 600;">✕</button>
+                    </div>
+                `;
+            });
+            
+            document.getElementById('listaFaltas').innerHTML = html || '<em style="color: #999;">Nenhuma falta registrada</em>';
+            document.getElementById('totalFaltas').textContent = faltasAtual.length;
+        }
+        
+        function salvarFaltas() {
+            const [mat, semana, mes] = document.getElementById('dataMatSemana').value.split('|');
+            
+            if (!allData[mes]) allData[mes] = {};
+            
+            // Salvar detalhes das faltas
+            const key = `${mat}_${semana}_faltas_detalhes`;
+            allData[mes][key] = JSON.stringify(faltasAtual);
+            
+            // Salvar contagem simples também
+            const keySimples = `${mat}_${semana}_faltas`;
+            allData[mes][keySimples] = faltasAtual.length.toString();
+            
+            saveToLocalStorage();
+            registrarSincronizacao('Faltas atualizadas com datas e atestado');
+            
+            alert(`✅ ${faltasAtual.length} falta(s) salva(s)!`);
+            fecharModalFaltas();
+            
+            // Recarregar tabela se estiver na aba correta
+            if (document.getElementById('tab-lancamento').classList.contains('active')) {
+                renderizarTabelaLancamento();
+            }
+        }
+
+
+        function exibirFaltasResumo(mat, semana, mes) {
+            const keyDetalhes = `${mat}_${semana}_faltas_detalhes`;
+            const keySimples = `${mat}_${semana}_faltas`;
+            
+            if (allData[mes] && allData[mes][keyDetalhes]) {
+                try {
+                    const faltas = JSON.parse(allData[mes][keyDetalhes]);
+                    
+                    if (faltas.length === 0) {
+                        return '<span style="color: #27ae60; font-weight: 600;">✅ Sem faltas</span>';
+                    }
+                    
+                    let html = '<div style="background: #fff3cd; padding: 10px; border-radius: 6px; margin: 5px 0;">';
+                    faltas.forEach(falta => {
+                        const badgeClass = falta.atestado === 'com' ? 'com-atestado' : 'sem-atestado';
+                        const badgeText = falta.atestado === 'com' ? '✅ COM' : '❌ SEM';
+                        
+                        html += `<div style="margin: 5px 0; font-size: 13px;">
+                            📅 ${falta.dataFormatada} 
+                            <span class="atestado-badge ${badgeClass}" style="margin-left: 8px;">${badgeText}</span>
+                        </div>`;
+                    });
+                    html += '</div>';
+                    
+                    return html;
+                } catch (e) {
+                    // Se não conseguir parsear, mostrar número simples
+                }
+            }
+            
+            // Fallback: mostrar número simples
+            const simples = allData[mes] ? (allData[mes][keySimples] || '0') : '0';
+            if (simples === '0') {
+                return '<span style="color: #27ae60; font-weight: 600;">✅ Sem faltas</span>';
+            }
+            return `<span style="color: #e74c3c; font-weight: 600;">${simples} dia(s)</span>`;
+        }
+
 </script>
+
+        <!-- MODAL GERENCIAR FALTAS -->
+        <div id="modalFaltas" class="modal-faltas">
+            <div class="modal-content-faltas">
+                <h3 style="margin-top: 0; color: #333;">📅 Registrar Faltas com Datas</h3>
+                
+                <input type="hidden" id="dataMatSemana">
+                
+                <div style="margin: 20px 0;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600;">Data da Falta:</label>
+                    <input type="date" id="faltaData" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-size: 14px;">
+                </div>
+                
+                <div style="margin: 20px 0;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600;">Tipo de Falta:</label>
+                    <select id="faltaAtestado" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-size: 14px;">
+                        <option value="com">✅ COM ATESTADO</option>
+                        <option value="sem">❌ SEM ATESTADO</option>
+                    </select>
+                </div>
+                
+                <button onclick="adicionarFalta()" style="width: 100%; padding: 12px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; margin-bottom: 20px;">+ Adicionar Falta</button>
+                
+                <div style="border-top: 2px solid #ddd; padding-top: 15px;">
+                    <h4 style="margin: 0 0 10px 0;">Faltas Registradas (<span id="totalFaltas">0</span>)</h4>
+                    <div id="listaFaltas" style="max-height: 250px; overflow-y: auto;">
+                        <em style="color: #999;">Nenhuma falta registrada</em>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 20px; display: flex; gap: 10px;">
+                    <button onclick="salvarFaltas()" style="flex: 1; padding: 12px; background: #28a745; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">✅ Salvar Faltas</button>
+                    <button onclick="fecharModalFaltas()" style="flex: 1; padding: 12px; background: #ccc; color: #333; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
 </body>
 </html>
