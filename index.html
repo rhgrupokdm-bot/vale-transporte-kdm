@@ -2905,7 +2905,12 @@
 
             localStorage.setItem('vtData', JSON.stringify(allData));
             fecharModalFaltas();
+
+            // Atualizar todas as abas
             renderTable();
+            renderTableReadOnly();
+            renderSemanalTab();
+            renderMensalTab();
 
             document.getElementById('successMsg').textContent = '✅ Faltas atualizadas com sucesso!';
             document.getElementById('successMsg').style.display = 'block';
